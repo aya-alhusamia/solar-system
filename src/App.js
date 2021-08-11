@@ -1,11 +1,15 @@
-
+//Styling
 import './App.css';
-import Puzzle from './Component/Puzzle/Puzzle';
+
+//Route
+import Routes from './Component/Routes';
 
 function App() {
   return (
+
     <div className="App">
-      <Puzzle />
+       <Routes />
+      
     </div>
   );
 }
