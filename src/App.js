@@ -1,15 +1,13 @@
 //Styling
-import './App.css';
+import "./App.css"; // @Octowl: still using?
 
 //Route
-import Routes from './Component/Routes';
+import Routes from "./Component/Routes";
 
 function App() {
   return (
-
     <div className="App">
-       <Routes />
-      
+      <Routes />
     </div>
   );
 }

@@ -1,8 +1,8 @@
 import { Route, Switch } from "react-router";
 
+import SignIn from "./Authentication/Signin";
 //components
 import SignUp from "./Authentication/Signup";
-import SignIn from "./Authentication/Signin";
 import Puzzle from "./Puzzle/Puzzle";
 
 function Routes() {
@@ -11,7 +11,6 @@ function Routes() {
       <Route path="/signup">
         <SignUp />
       </Route>
-
       <Route exact path="/signin">
         <SignIn />
       </Route>

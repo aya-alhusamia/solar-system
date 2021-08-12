@@ -1,49 +1,54 @@
+import "./style.scss";
+
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { useHistory, Link } from "react-router-dom";
-
-//Components
-import { signin } from "../../store/action/userActions";
-
 //Styling
 import { AiFillEye } from "react-icons/ai";
 import { AiFillEyeInvisible } from "react-icons/ai";
 import { FiUser } from "react-icons/fi";
+import { useDispatch } from "react-redux";
+import { Link, useHistory } from "react-router-dom";
+
+//Components
+import { signin } from "../../store/action/userActions";
+/**
+ * @Octowl:
+ * move styled components into a local `styles.js` file
+ * so you don't have to import them from so far away
+ */
 import { UserForm } from "../../styles";
-import './style.scss'
 
 const SignIn = () => {
   const history = useHistory();
   const dispatch = useDispatch();
+
   const [pass, setpass] = useState("password");
   const [user, setUser] = useState({
     username: "",
     password: "",
   });
-  const [focus, setFocus] = useState("")
+
+  const [focus, setFocus] = useState(""); // @Octowl: unused?
+
   const handleChange = (event) =>
     setUser({
       ...user,
       [event.target.name]: event.target.value,
     });
+
   const showPass = () => {
     pass === "password" ? setpass("text") : setpass("password");
   };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(signin(user, history));
   };
 
-
-
   return (
-
-
     <div className="container mt-5">
       <div className="row">
         <div className="col-4"></div>
         <div className="col-4">
-          {" "}
           <UserForm onSubmit={handleSubmit}>
             <h1 className="mb-5">Sign in</h1>
             <div class="input-group mb-3">
@@ -59,7 +64,7 @@ const SignIn = () => {
               />
               <span class="input-group-text" id="basic-addon2">
                 <FiUser size="1.5em" />
-              </span>{" "}
+              </span>
             </div>
             <div class="input-group mb-3">
               <input
@@ -78,7 +83,7 @@ const SignIn = () => {
                 ) : (
                   <AiFillEyeInvisible size="1.5em" onClick={showPass} />
                 )}
-              </span>{" "}
+              </span>
             </div>
             <button
               type="submit"
@@ -89,13 +94,11 @@ const SignIn = () => {
           </UserForm>
         </div>
         <div className="col-4"></div>
-        <p>dont have accout! please sign up  <Link to="/signup" >
-          here
-        </Link></p>
+        <p>
+          dont have accout! please sign up <Link to="/signup">here</Link>
+        </p>
       </div>
     </div>
-
-
   );
 };
 
