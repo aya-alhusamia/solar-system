@@ -37,67 +37,64 @@ const SignIn = () => {
 
 
   return (
-  
-  
+
+
     <div className="container mt-5">
-        <div className="row">
-          <div className="col-4"></div>
-          <div className="col-4">
-            {" "}
-            <UserForm onSubmit={handleSubmit}>
-              <h1 className="mb-5">Sign in</h1>
-              <div class="input-group mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Username"
-                  aria-label="Username"
-                  aria-describedby="basic-addon2"
-                  onChange={handleChange}
-                  value={user.username}
-                  name="username"
-                />
-                <span class="input-group-text" id="basic-addon2">
-                  <FiUser size="1.5em" />
-                </span>{" "}
-              </div>
-              <div class="input-group mb-3">
-                <input
-                  type={pass}
-                  class="form-control"
-                  placeholder="Password"
-                  aria-label="Password"
-                  aria-describedby="basic-addon2"
-                  onChange={handleChange}
-                  value={user.password}
-                  name="password"
-                />
-                <span class="input-group-text" id="basic-addon2">
-                  {pass === "password" ? (
-                    <AiFillEye size="1.5em" onClick={showPass} />
-                  ) : (
-                    <AiFillEyeInvisible size="1.5em" onClick={showPass} />
-                  )}
-                </span>{" "}
-              </div>
-              <button
-                type="submit"
-                className="btn btn-primary btn-block mb-4 float-end"
-              >
-                Sign in
-              </button>
-            </UserForm>
-          </div>
-          <div className="col-4"></div>
-          <p>dont have accout! please sign up  <Link to="/signup" >
-            here
-          </Link></p>
+      <div className="row">
+        <div className="col-4"></div>
+        <div className="col-4">
+          {" "}
+          <UserForm onSubmit={handleSubmit}>
+            <h1 className="mb-5">Sign in</h1>
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Username"
+                aria-label="Username"
+                aria-describedby="basic-addon2"
+                onChange={handleChange}
+                value={user.username}
+                name="username"
+              />
+              <span class="input-group-text" id="basic-addon2">
+                <FiUser size="1.5em" />
+              </span>{" "}
+            </div>
+            <div class="input-group mb-3">
+              <input
+                type={pass}
+                class="form-control"
+                placeholder="Password"
+                aria-label="Password"
+                aria-describedby="basic-addon2"
+                onChange={handleChange}
+                value={user.password}
+                name="password"
+              />
+              <span class="input-group-text" id="basic-addon2">
+                {pass === "password" ? (
+                  <AiFillEye size="1.5em" onClick={showPass} />
+                ) : (
+                  <AiFillEyeInvisible size="1.5em" onClick={showPass} />
+                )}
+              </span>{" "}
+            </div>
+            <button
+              type="submit"
+              className="btn btn-primary btn-block mb-4 float-end"
+            >
+              Sign in
+            </button>
+          </UserForm>
         </div>
+        <div className="col-4"></div>
         <p>dont have accout! please sign up  <Link to="/signup" >
-        here
-      </Link></p>
-      </div> 
-     
+          here
+        </Link></p>
+      </div>
+    </div>
+
 
   );
 };
