@@ -1,4 +1,5 @@
 import decode from "jwt-decode";
+
 //Components
 import instance from "./instance";
 import * as actionTypes from "./types";
@@ -39,6 +40,7 @@ export const checkForToken = () => {
     return setUser();
   }
 };
+
 const setUser = (token) => {
   if (token) {
     localStorage.setItem("myToken", token);
@@ -54,5 +56,3 @@ const setUser = (token) => {
     };
   }
 };
-
-
