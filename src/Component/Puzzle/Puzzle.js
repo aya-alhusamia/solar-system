@@ -9,6 +9,7 @@ import "./style.css"
 //Function
 import { updateURLParameter } from "./helpers"
 
+
 function Puzzle() {
     const [imgUrl, setImgUrl] = useState("")
 
@@ -22,6 +23,7 @@ function Puzzle() {
     const handleImageChange = (e) => {
         setImgUrl(e.target.value)
         window.history.replaceState("", "", updateURLParameter(window.location.href, "img", e.target.value))
+
     }
 
     return (
