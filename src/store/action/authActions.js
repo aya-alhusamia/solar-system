@@ -18,7 +18,7 @@ export const signin = (userData, history) => async (dispatch) => {
     const res = await instance.post("/signin", userData);
     instance.defaults.headers.common.Authorization = `Bearer ${res.data.token}`;
     dispatch(setUser(res.data.token));
-    history.push("/games");
+    history.push("/profile");
   } catch (error) {
     console.log(error.message);
   }
@@ -54,5 +54,23 @@ const setUser = (token) => {
     };
   }
 };
-
+export const updateUser = (user, history) => {
+  
+  return async (dispatch) => {
+      console.log("1")
+    try {
+     
+      
+      const res = await instance.put( "/profile" ,user);
+      console.log(user)
+      instance.defaults.headers.common.Authorization = `Bearer ${res.data.token}`;
+      dispatch(setUser(res.data.token))
+      history.push("/games");
+      
+     
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
 

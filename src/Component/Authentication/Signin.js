@@ -4,7 +4,6 @@ import { useHistory, Link } from "react-router-dom";
 
 //Action
 import { signin } from "../../store/action/userActions";
-
 //Component
 import Solar from "./Solar/Solar"
 

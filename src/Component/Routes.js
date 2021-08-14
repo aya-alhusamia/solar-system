@@ -6,6 +6,8 @@ import Signin from "./Authentication/Signin";
 import Puzzle from "./Puzzle/Puzzle";
 import Navbar from "./Navbar/Navbar";
 import ErrorPage from "./404Page/ErrorPage";
+import Profile from "./Profile";
+ 
 
 function Routes() {
   return (
@@ -15,24 +17,27 @@ function Routes() {
       <Route path="/signup">
         <SignUp />
       </Route>
-      <Route exact path="/signin">
+      <Route path="/signin">
         <Signin />
       </Route>
-      <Route exact path="/games">
+      <Route path="/games">
         <Puzzle />
       </Route>
-      <Route exact path="/navbar">
+ 
+      <Route path="/navbar">
         <Navbar />
       </Route>
-      {/* <Route exact path="/error">
+      {/* <Route path="/error">
         <ErrorPage />
       </Route> */}
-      <Redirect to="/" />
 
-
+      <Route path="/profile">
+        <Profile />
+      </Route>
+   <Redirect to="/" />
     </Switch>
   );
 }
-// عند الريدايركت بحط 404 بيج اوووووووووووووووووووك 
+
 
 export default Routes;
