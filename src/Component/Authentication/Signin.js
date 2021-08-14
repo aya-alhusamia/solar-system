@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { useHistory, Link } from "react-router-dom";
 
 //Action
-import { signin } from "../../store/action/userActions";
+import { signin } from "../../store/action/authActions";
 //Component
 import Solar from "./Solar/Solar"
 

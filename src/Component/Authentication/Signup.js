@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 import Solar from "./Solar/Solar";
 
 //Action
-import { signup } from "../../store/action/userActions";
+import { signup } from "../../store/action/authActions";
 
 //Styling
 import { AiFillEye } from "react-icons/ai";
