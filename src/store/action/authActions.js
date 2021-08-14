@@ -18,7 +18,7 @@ export const signin = (userData, history) => async (dispatch) => {
     const res = await instance.post("/signin", userData);
     instance.defaults.headers.common.Authorization = `Bearer ${res.data.token}`;
     dispatch(setUser(res.data.token));
-    history.push("/store");
+    history.push("/games");
   } catch (error) {
     console.log(error.message);
   }
