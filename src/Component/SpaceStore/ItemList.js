@@ -6,7 +6,7 @@ const ItemList = () => {
   const items = useSelector((state) => state.items.items);
   console.log(items);
   const user = useSelector((state) => state.user.user);
-  let filtered = items.map((item) => <Item item={item} key={item.id} />);
+  let itemsList = items.map((item) => <Item item={item} key={item.id} />);
   if (!user) return <Redirect to="/" />;
   return (
     <>
@@ -19,7 +19,7 @@ const ItemList = () => {
           height: "100vh",
         }}
       >
-        {filtered}
+        {itemsList}
       </div>
     </>
   );
