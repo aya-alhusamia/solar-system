@@ -20,7 +20,6 @@ export const updateItem = (updatedItem) => {
 
 export const fetchItems = () => {
   return async (dispatch) => {
-    console.log("item action");
     try {
       const res = await instance.get("/items");
       dispatch({

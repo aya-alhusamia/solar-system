@@ -2,9 +2,9 @@ import * as actionTypes from "../action/types";
 
 const initialState = {
   items: [],
-  // loading: true,
+  loading: true,
 };
-const productReducer = (state = initialState, action) => {
+const itemReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.UPDATE_ITEM:
       const { updatedItem } = action.payload;
@@ -18,10 +18,10 @@ const productReducer = (state = initialState, action) => {
       return {
         ...state,
         items: action.payload,
-        // loading: false,
+        loading: false,
       };
     default:
       return state;
   }
 };
-export default productReducer;
+export default itemReducer;
