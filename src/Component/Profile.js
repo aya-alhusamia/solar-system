@@ -1,44 +1,49 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+
 //Components
-import { signup } from "../../store/action/authActions";
+import { updateUser } from "../store/action/authActions";
 
 //Styling
 import { AiFillEye } from "react-icons/ai";
 import { AiFillEyeInvisible } from "react-icons/ai";
 import { FiUser } from "react-icons/fi";
-import { UserForm } from "../../styles";
+import { UserForm } from "../styles";
 
-const SignUp = () => {
+const Profile = () => {
+  const _user= useSelector((state) => state.user.user);
   const history = useHistory();
+console.log(_user)
   const dispatch = useDispatch();
-  const [pass, setPass] = useState("password");
+
   const [user, setUser] = useState({
-    username: "",
-    password: "",
+   username:_user?.username,
+   password: "",
   });
-  const handleChange = (event) =>
-    setUser({
-      ...user,
-      [event.target.name]: event.target.value,
-    });
+  const [pass, setpass] = useState("password");
+  const handleChange = (event) => {
+    setUser({ ...user, [event.target.name]: event.target.value });
+  };
+
   const showPass = () => {
-    pass === "password" ? setPass("text") : setPass("password");
+    pass === "password" ? setpass("text") : setpass("password");
   };
+
   const handleSubmit = (event) => {
-    event.preventDefault();
-    dispatch(signup(user, history));
+    event.preventDefault()
+    dispatch(updateUser(user, history));
   };
+
   return (
-    <>
-      <div className="container mt-5">
+    
+    <div className="container mt-5">
         <div className="row">
           <div className="col-4"></div>
           <div className="col-4">
             {" "}
             <UserForm onSubmit={handleSubmit}>
-              <h1 className="mb-5">Sign up</h1>
+              <h1 className="mb-5">Profile</h1>
               <div class="input-group mb-3">
                 <input
                   type="text"
@@ -54,7 +59,6 @@ const SignUp = () => {
                   <FiUser size="1.5em" />
                 </span>{" "}
               </div>
-             
               <div class="input-group mb-3">
                 <input
                   type={pass}
@@ -78,15 +82,17 @@ const SignUp = () => {
                 type="submit"
                 className="btn btn-primary btn-block mb-4 float-end"
               >
-                Sign up
+               Edit your Profile
               </button>
             </UserForm>
           </div>
-          <div className="col-4"></div>
+        
+    
         </div>
-      </div>
-    </>
+       
+     
+      </div> 
   );
 };
 
-export default SignUp;
+export default Profile;

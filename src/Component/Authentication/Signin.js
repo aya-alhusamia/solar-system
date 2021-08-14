@@ -3,14 +3,14 @@ import { useDispatch } from "react-redux";
 import { useHistory, Link } from "react-router-dom";
 
 //Components
-import { signin } from "../../store/action/userActions";
+import { signin } from "../../store/action/authActions";
 
 //Styling
 import { AiFillEye } from "react-icons/ai";
 import { AiFillEyeInvisible } from "react-icons/ai";
 import { FiUser } from "react-icons/fi";
 import { UserForm } from "../../styles";
-import './style.scss'
+
 
 const SignIn = () => {
   const history = useHistory();

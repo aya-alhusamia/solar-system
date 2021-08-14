@@ -11,12 +11,20 @@ function Board({ imgUrl }) {
     const [tiles, setTiles] = useState([...Array(TILE_COUNT).keys()]);
     const [isStarted, setIsStarted] = useState(false);
     console.log('is started:', isStarted)
-
+const [moves,setMoves]=useState(0);
     const shuffleTiles = () => {
         const shuffledTiles = shuffle(tiles)
         setTiles(shuffledTiles);
     }
+const calculateScore=()=>{
+let score= TILE_COUNT*100;
+for (let i = 0; i < moves-(GRID_SIZE*TILE_COUNT -1); i++) {
+    score= score-(score*0.05)
+    score=Math.floor(score)
+}
+return score
 
+}
     const swapTiles = (tileIndex) => {
         if (canSwap(tileIndex, tiles.indexOf(tiles.length - 1))) {
             const swappedTiles = swap(tiles, tileIndex, tiles.indexOf(tiles.length - 1))
@@ -26,15 +34,18 @@ function Board({ imgUrl }) {
 
     const handleTileClick = (index) => {
         swapTiles(index)
+        setMoves(moves+1)
     }
-
+console.log(moves)
     const handleShuffleClick = () => {
         shuffleTiles()
+        setMoves(0)
     }
 
     const handleStartClick = () => {
         shuffleTiles()
         setIsStarted(true)
+        setMoves(0)
     }
 
     const pieceWidth = Math.round(BOARD_SIZE / GRID_SIZE);
@@ -60,7 +71,7 @@ function Board({ imgUrl }) {
                     />
                 ))}
             </ul>
-            {hasWon && isStarted && <div>Puzzle solved 🧠 🎉</div>}
+            {hasWon && isStarted && <div>Puzzle solved 🧠 🎉 {calculateScore()}</div>}
             {!isStarted ?
                 (<button onClick={() => handleStartClick()}>Start game</button>) :
                 (<button onClick={() => handleShuffleClick()}>Restart game</button>)}
