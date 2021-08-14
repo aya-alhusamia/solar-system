@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 //Components
-import { signup } from "../../store/action/userActions";
+import { signup } from "../../store/action/authActions";
 
 //Styling
 import { AiFillEye } from "react-icons/ai";
