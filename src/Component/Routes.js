@@ -1,29 +1,43 @@
-import { Route, Switch } from "react-router";
+import { Redirect, Route, Switch } from "react-router";
 
 //components
 import SignUp from "./Authentication/Signup";
-import SignIn from "./Authentication/Signin";
+import Signin from "./Authentication/Signin";
 import Puzzle from "./Puzzle/Puzzle";
+import Navbar from "./Navbar/Navbar";
+import ErrorPage from "./404Page/ErrorPage";
 import Profile from "./Profile";
+ 
 
 function Routes() {
   return (
     <Switch>
+
+
       <Route path="/signup">
         <SignUp />
       </Route>
-
-      <Route exact path="/signin">
-        <SignIn />
+      <Route path="/signin">
+        <Signin />
       </Route>
-      <Route exact path="/games">
+      <Route path="/games">
         <Puzzle />
       </Route>
-      <Route exact path="/profile">
+ 
+      <Route path="/navbar">
+        <Navbar />
+      </Route>
+      {/* <Route path="/error">
+        <ErrorPage />
+      </Route> */}
+
+      <Route path="/profile">
         <Profile />
       </Route>
+   <Redirect to="/" />
     </Switch>
   );
 }
+
 
 export default Routes;

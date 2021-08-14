@@ -18,7 +18,7 @@
 .tile{
     position: absolute;
     list-style: none;
-    background: rgb(197, 129, 129);
+    background: rgb(197, 129, 129) ;
     background-repeat: none;
     display: grid;
     place-items: center;
