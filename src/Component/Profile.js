@@ -80,7 +80,7 @@ console.log(_user)
               </div>
               <button
                 type="submit"
-                className="btn btn-primary btn-block mb-4 float-end"
+               
               >
                Edit your Profile
               </button>

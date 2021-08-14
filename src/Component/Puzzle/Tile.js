@@ -17,7 +17,7 @@ function Tile(props) {
         translateX: visualPos.x,
         translateY: visualPos.y,
         backgroundImage: `url(${imgUrl})`,
-        backgroundSize: `${BOARD_SIZE * 1.3}%`,
+        backgroundSize:(TILE_COUNT ===4)? (`${BOARD_SIZE * 0.935}%`) : (  `${BOARD_SIZE * 0.935}%`),
         backgroundPosition: `${(100 / GRID_SIZE) * (tile % GRID_SIZE)}% ${(100 / GRID_SIZE) * (Math.floor(tile / GRID_SIZE))}%`,
 
     };
