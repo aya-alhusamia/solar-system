@@ -7,7 +7,7 @@ import "./style.css"
 //Functions
 import { canSwap, shuffle, swap, isSolved } from "./helpers"
 
-function Board({ imgUrl }) {
+function Board({ imgArray }) {
     const [tiles, setTiles] = useState([...Array(TILE_COUNT).keys()]);
     const [isStarted, setIsStarted] = useState(false);
     console.log('is started:', isStarted)
@@ -63,7 +63,7 @@ console.log(moves)
                     <Tile
                         key={tile}
                         index={index}
-                        imgUrl={imgUrl}
+                        imgArray={imgArray}
                         tile={tile}
                         width={pieceWidth}
                         height={pieceHeight}
