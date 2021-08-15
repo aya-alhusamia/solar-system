@@ -6,8 +6,8 @@ import Signin from "./Authentication/Signin";
 import Puzzle from "./Puzzle/Puzzle";
 import Navbar from "./Navbar/Navbar";
 import ErrorPage from "./404Page/ErrorPage";
-import Profile from "./Profile";
- 
+import Profile from "./Profile/Profile";
+
 
 function Routes() {
   return (
@@ -23,7 +23,7 @@ function Routes() {
       <Route path="/games">
         <Puzzle />
       </Route>
- 
+
       <Route path="/navbar">
         <Navbar />
       </Route>
@@ -34,7 +34,7 @@ function Routes() {
       <Route path="/profile">
         <Profile />
       </Route>
-   <Redirect to="/" />
+      <Redirect to="/" />
     </Switch>
   );
 }
