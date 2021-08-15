@@ -13,8 +13,8 @@ import { useSelector } from 'react-redux'
 function Puzzle() {
   
     const images = useSelector((state) => state.images.images);
-    const imgArray= images.map((image)=>  image.image)[Math.floor(Math.random() * images.length)];
-       console.log(imgArray)
+    const randomImg= images[Math.floor(Math.random() * images.length)]?.image
+       console.log(images[Math.floor(Math.random() * images.length)]?.image)
 
     // useEffect(() => {
     //     const urlParams = new URLSearchParams(window.location.search)
@@ -31,7 +31,7 @@ function Puzzle() {
     return (
         <div className="puzzle">
             <h1>PUZZLE</h1>
-            <Board  imgArray ={imgArray}/>
+            <Board  randomImg ={randomImg}/>
             
         </div>
     )
