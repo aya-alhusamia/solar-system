@@ -7,6 +7,7 @@ const initialState = {
 const spaceImgReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.FETCH_SPACEIMG:
+      console.log(action.payload)
       return {
         ...state,
         images: action.payload,

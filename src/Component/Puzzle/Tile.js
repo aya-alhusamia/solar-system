@@ -9,8 +9,8 @@ import "./style.css"
 
 function Tile(props) {
     
-    const { tile, index, width, height, handleTileClick, imgArray } = props;
-    console.log("img in tile", imgArray)
+    const { tile, index, width, height, handleTileClick, randomImg } = props;
+    console.log("img in tile", randomImg)
     const { row, col } = getMatrixPosition(index);
     const visualPos = getVisualPosition(row, col, width, height);
     const tileStyle = {
@@ -18,7 +18,7 @@ function Tile(props) {
         height: `calc(100% / ${GRID_SIZE})`,
         translateX: visualPos.x,
         translateY: visualPos.y,
-        backgroundImage: `url(${imgArray})`,
+        backgroundImage: `url(http://localhost:8000/media//1628965551706detail2.PNG)`,
         backgroundSize: `${BOARD_SIZE * 1.3}%`,
         backgroundPosition: `${(100 / GRID_SIZE) * (tile % GRID_SIZE)}% ${(100 / GRID_SIZE) * (Math.floor(tile / GRID_SIZE))}%`,
 
@@ -41,7 +41,7 @@ function Tile(props) {
                     className="tile"
                     onClick={() => handleTileClick(index)}
                 >
-                    {!imgArray && `${tile + 1}`}
+                    {!randomImg && `${tile + 1}`}
                 </li>
             )}
         </Motion>
