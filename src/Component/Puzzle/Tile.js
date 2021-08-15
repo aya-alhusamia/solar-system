@@ -16,12 +16,13 @@ function Tile(props) {
     height: `calc(100% / ${GRID_SIZE})`,
     translateX: visualPos.x,
     translateY: visualPos.y,
-    // backgroundImage: `url(${randomImg})`,
+    backgroundImage: `url(${randomImg})`,
     backgroundSize: `${BOARD_SIZE * 1.3}%`,
     backgroundPosition: `${(100 / GRID_SIZE) * (tile % GRID_SIZE)}% ${
       (100 / GRID_SIZE) * Math.floor(tile / GRID_SIZE)
     }%`,
   };
+  console.log("tile", randomImg);
   const motionStyle = {
     translateX: spring(visualPos.x),
     translateY: spring(visualPos.y),
@@ -40,6 +41,7 @@ function Tile(props) {
           className="tile"
           onClick={() => handleTileClick(index)}
         >
+          {/* <img src={randomImg} /> */}
           {!randomImg && `${tile + 1}`}
         </li>
       )}
