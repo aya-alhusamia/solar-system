@@ -5,11 +5,13 @@ import { fetchSpaceImg } from "./action/spaceImgActions";
 import authReducer from "./reducers/authReducer";
 import itemReducer from "./reducers/itemReducer";
 import spaceImgReducer from "./reducers/spaceImgReducer";
+import userItemReducer from "./reducers/userItemReducer";
 
 const rootReducer = combineReducers({
   user: authReducer,
   items: itemReducer,
   images: spaceImgReducer,
+  userItems: userItemReducer,
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

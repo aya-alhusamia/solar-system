@@ -6,7 +6,6 @@ import * as actionTypes from "./types";
 export const signup = (userData, history) => async (dispatch) => {
   try {
     const res = await instance.post("/signup", userData);
-    instance.defaults.headers.common.Authorization = `Bearer ${res.data.token}`;
     dispatch(setUser(res.data.token));
     history.push("/games");
   } catch (error) {
@@ -16,7 +15,6 @@ export const signup = (userData, history) => async (dispatch) => {
 export const signin = (userData, history) => async (dispatch) => {
   try {
     const res = await instance.post("/signin", userData);
-    instance.defaults.headers.common.Authorization = `Bearer ${res.data.token}`;
     dispatch(setUser(res.data.token));
     history.push("/games");
   } catch (error) {
@@ -41,6 +39,7 @@ export const checkForToken = () => {
 };
 const setUser = (token) => {
   if (token) {
+    instance.defaults.headers.common.Authorization = `Bearer ${token}`;
     localStorage.setItem("myToken", token);
     return {
       type: actionTypes.SET_USER,
@@ -59,8 +58,6 @@ export const updateUser = (user, history) => {
     console.log("1");
     try {
       const res = await instance.put("/profile", user);
-      console.log(user);
-      instance.defaults.headers.common.Authorization = `Bearer ${res.data.token}`;
       dispatch(setUser(res.data.token));
       history.push("/games");
     } catch (error) {
