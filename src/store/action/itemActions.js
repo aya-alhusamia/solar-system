@@ -71,3 +71,8 @@ export const fetchItems = () => {
 //     next(error);
 //   }
 // };
+
+// export const addItemToCart = (newItem) => ({
+//   type: actionTypes.ADD_ITEM,
+//   payload: newItem,
+// });
