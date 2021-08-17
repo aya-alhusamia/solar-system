@@ -3,14 +3,15 @@ import { RiSpaceShipLine } from "react-icons/ri";
 import { Button, Modal, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { createUserItem } from "../../store/action/userItemActions";
-import { updateUser } from "../../store/action/authActions";
+import { scoreUpdate } from "../../store/action/authActions";
+import { useHistory } from "react-router";
 
 const Item = (props) => {
   const user = useSelector((state) => state.user.user);
+  const history = useHistory();
   console.log(user);
   const [show, setShow] = useState(false);
-  const [_user, setUser] = useState({
-    username: user.username,
+  const [score, setScore] = useState({
     score: user.score,
   });
   const [newItem, setNewItem] = useState({
@@ -23,12 +24,12 @@ const Item = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setUser({
-      ..._user,
-      score: user.score - props.item.price,
+    setScore({
+     score: (user.score - props.item.price),
     });
     dispatch(createUserItem(newItem));
-    dispatch(updateUser(_user));
+    dispatch(scoreUpdate({score},history));
+    
     handleClose();
     setNewItem({
       ...newItem,

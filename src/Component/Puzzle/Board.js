@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 //Components
 import Tile from "./Tile";
 //Style
@@ -6,8 +7,10 @@ import { TILE_COUNT, GRID_SIZE, BOARD_SIZE } from "./constants"
 import "./style.css"
 //Functions
 import { canSwap, shuffle, swap, isSolved } from "./helpers"
+import { scoreUpdate } from "../../store/action/authActions";
 
 function Board({ randomImg }) {
+    const score = useSelector((state) => state.user.user?.score);
     const [tiles, setTiles] = useState([...Array(TILE_COUNT).keys()]);
     const [isStarted, setIsStarted] = useState(false);
     console.log('is started:', isStarted)
@@ -16,6 +19,7 @@ const [moves,setMoves]=useState(0);
         const shuffledTiles = shuffle(tiles)
         setTiles(shuffledTiles);
     }
+  const dispatch = useDispatch() 
 const calculateScore=()=>{
 let score= TILE_COUNT*100;
 for (let i = 0; i < moves-(GRID_SIZE*TILE_COUNT -1); i++) {
@@ -56,6 +60,12 @@ console.log(moves)
     };
     const hasWon = isSolved(tiles)
 
+    useEffect(() => {
+        if( hasWon){
+            dispatch(scoreUpdate({score :score+calculateScore()}))
+        }
+       
+    }, [hasWon])  
     return (
         <>
             <ul style={style} className="board">
