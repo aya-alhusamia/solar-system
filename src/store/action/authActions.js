@@ -54,8 +54,8 @@ const setUser = (token) => {
   }
 };
 export const updateUser = (user, history) => {
+  console.log("user from action", user);
   return async (dispatch) => {
-    console.log("1");
     try {
       const res = await instance.put("/profile", user);
       dispatch(setUser(res.data.token));
