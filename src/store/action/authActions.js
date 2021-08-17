@@ -65,8 +65,7 @@ export const updateUser = (user, history) => {
     }
   };
 };
-export const scoreUpdate = (score,history) => {
-
+export const scoreUpdate = (score, history) => {
   return async (dispatch) => {
     try {
       const res = await instance.put("/score", score);

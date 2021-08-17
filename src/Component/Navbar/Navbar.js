@@ -65,11 +65,11 @@ const Navbar = () => {
                 </NavLink>
                 <NavLink to="/crisisstore">
                   <li className="nav-item">
-                    <Button className={classes.btn}>helo</Button>
+                    <Button className={classes.btn}>Store</Button>
                   </li>
                 </NavLink>
               </>
-            )} 
+            )}
             {user ? (
               <>
                 <NavLink to="/games">
