@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { RiSpaceShipLine } from "react-icons/ri";
 import { Button, Modal, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { createUserItem } from "../../store/action/userItemActions";
+import { createUserItem, fetchUserItems } from "../../store/action/userItemActions";
 import { scoreUpdate } from "../../store/action/authActions";
 import { useHistory } from "react-router";
 
@@ -36,6 +36,10 @@ const Item = (props) => {
       name: "",
     });
   };
+ 
+  useEffect(() => {
+    dispatch(fetchUserItems()
+  )}, [newItem])
 
   const handleInputChange = (event) => {
     setNewItem({
