@@ -33,12 +33,12 @@ const Navbar = () => {
   const classes = useStyles();
   return (
     <div>
-      <nav
+      <div
         className="navbar navbar-expand-sm bg-dark navbar-light"
-        style={{ backgroundColor: "#495057" }}
+        style={{ backgroundColor: "#201f2013" }}
       >
         <div className="container-fluid">
-          <NavLink to="/">
+          <NavLink to="/" style={{ textDecoration: "none" }}>
             <Navtitle className="navbar-brand" style={{ color: "#f8f9fa" }} >
               <GiSpaceSuit size="2.0em" />
               Crisis Galaxy
@@ -48,14 +48,14 @@ const Navbar = () => {
           <ul className="navbar-nav">
             {user && (
               <div>
-                <NavLink to="/games">
+                <NavLink to="/games" style={{ textDecoration: "none" }}>
                   <li className="nav-item" >
                     <Button className={classes.btn} >
                       Games
                     </Button>
                   </li>
                 </NavLink>
-                <NavLink to="/crisisstore">
+                <NavLink to="/crisisstore" style={{ textDecoration: "none" }}>
                   <li className="nav-item">
                     <Button className={classes.btn}>Store</Button>
                   </li>
@@ -64,7 +64,7 @@ const Navbar = () => {
             )}
             {user ? (
               <>
-                <NavLink to="/games">
+                <NavLink to="/games" style={{ textDecoration: "none" }}>
                   <li className="nav-item" style={{ paddingTop: "10px" }}>
                     <p
                       style={{
@@ -89,25 +89,21 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                <NavLink to="/signin">
+                <NavLink to="/signin" style={{ textDecoration: "none" }}>
                   <li className="nav-item">
-
-                    <Button className={classes.btn}>Sign in</Button>
-
+                    <Button className={classes.btn}>Log in</Button>
                   </li>
                 </NavLink>
-                <NavLink to="/signup">
+                <NavLink to="/signup" style={{ textDecoration: "none" }}>
                   <li className="nav-item">
-
                     <Button className={classes.btn}>Sign up</Button>
-
                   </li>
                 </NavLink>
               </>
             )}
           </ul>
         </div>
-      </nav>
+      </div>
     </div>
   );
 };
