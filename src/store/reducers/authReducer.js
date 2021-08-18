@@ -1,18 +1,18 @@
 //Action Types
-import * as actionType from "../action/types";
+import * as actionTypes from "../action/types";
 
 const initialState = {
   user: null,
-  allUsers: [],
+  
 };
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionType.SET_USER:
+    case actionTypes.SET_USER:
       return {
         ...state,
         user: action.payload,
       };
-    
+     
     default:
       return state;
   }

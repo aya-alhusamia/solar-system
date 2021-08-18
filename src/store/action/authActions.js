@@ -6,7 +6,6 @@ import * as actionTypes from "./types";
 export const signup = (userData, history) => async (dispatch) => {
   try {
     const res = await instance.post("/signup", userData);
-    instance.defaults.headers.common.Authorization = `Bearer ${res.data.token}`;
     dispatch(setUser(res.data.token));
     history.push("/games");
   } catch (error) {
@@ -16,7 +15,6 @@ export const signup = (userData, history) => async (dispatch) => {
 export const signin = (userData, history) => async (dispatch) => {
   try {
     const res = await instance.post("/signin", userData);
-    instance.defaults.headers.common.Authorization = `Bearer ${res.data.token}`;
     dispatch(setUser(res.data.token));
     history.push("/games");
   } catch (error) {
@@ -41,6 +39,7 @@ export const checkForToken = () => {
 };
 const setUser = (token) => {
   if (token) {
+    instance.defaults.headers.common.Authorization = `Bearer ${token}`;
     localStorage.setItem("myToken", token);
     return {
       type: actionTypes.SET_USER,
@@ -54,5 +53,26 @@ const setUser = (token) => {
     };
   }
 };
-
-
+export const updateUser = (user, history) => {
+  console.log("user from action", user);
+  return async (dispatch) => {
+    try {
+      const res = await instance.put("/profile", user);
+      dispatch(setUser(res.data.token));
+      history.push("/games");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+export const scoreUpdate = (score, history) => {
+  return async (dispatch) => {
+    try {
+      const res = await instance.put("/score", score);
+      dispatch(setUser(res.data.token));
+      history.push("/crisisstore");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
