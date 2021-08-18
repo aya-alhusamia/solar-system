@@ -3,7 +3,6 @@ import * as actionTypes from "../action/types";
 
 const initialState = {
   user: null,
-  
 };
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -12,7 +11,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         user: action.payload,
       };
-     
+
     default:
       return state;
   }

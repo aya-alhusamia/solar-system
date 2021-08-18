@@ -14,3 +14,17 @@ export const createUserItem = (newItem) => {
     }
   };
 };
+
+export const fetchUserItems = () => {
+  return async (dispatch) => {
+    try {
+      const res = await instance.get("/myitems");
+      dispatch({
+        type: actionTypes.FETCH_USERITEM,
+        payload: res.data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};

@@ -11,10 +11,11 @@ import ItemList from "./SpaceStore/ItemList";
 import SolarSystem from "./Solar-System/SolarSystem/SolarSystem";
 import Home from "./Home/Home";
 
+import UserItemList from "./UserItems/UserItemList";
+
 function Routes() {
   return (
     <Switch>
-
       <Route path="/signup">
         <SignUp />
       </Route>
@@ -26,6 +27,12 @@ function Routes() {
       </Route>
       <Route path="/crisisstore">
         <ItemList />
+      </Route>
+      <Route path="/myitems">
+        <UserItemList />
+      </Route>
+      <Route path="/profile">
+        <Profile />
       </Route>
       <Route path="/navbar">
         <Navbar />
@@ -40,12 +47,7 @@ function Routes() {
         <ErrorPage />
       </Route> */}
 
-      <Route path="/profile">
-        <Profile />
-      </Route>
- 
       {/* <Redirect to="/" /> */}
- 
     </Switch>
   );
 }

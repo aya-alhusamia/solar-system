@@ -3,12 +3,11 @@ import thunk from "redux-thunk";
 import { checkForToken } from "./action/authActions";
 import { fetchItems } from "./action/itemActions";
 import { fetchSpaceImg } from "./action/spaceImgActions";
+import { fetchUserItems } from "./action/userItemActions";
 import authReducer from "./reducers/authReducer";
 import itemReducer from "./reducers/itemReducer";
 import spaceImgReducer from "./reducers/spaceImgReducer";
-
 import userItemReducer from "./reducers/userItemReducer";
-
 
 const rootReducer = combineReducers({
   user: authReducer,
@@ -16,7 +15,7 @@ const rootReducer = combineReducers({
   images: spaceImgReducer,
 
   userItems: userItemReducer,
-})
+});
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
@@ -26,4 +25,5 @@ const store = createStore(
 store.dispatch(fetchItems());
 store.dispatch(checkForToken());
 store.dispatch(fetchSpaceImg());
+store.dispatch(fetchUserItems());
 export default store;

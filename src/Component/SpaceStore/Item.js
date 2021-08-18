@@ -1,13 +1,3 @@
- 
-// const Item = (props) => {
-//   return (
-//     <div>
-//       <p>{props.item.category}</p>
-//       <img src={props.item.image} />
-//       <p>{props.item.name}</p>
-//       <p>{props.item.price} $</p>
-//     </div>
- 
 import { useState } from "react";
 import { RiSpaceShipLine } from "react-icons/ri";
 import { Button, Modal, Form } from "react-bootstrap";
@@ -35,11 +25,11 @@ const Item = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     setScore({
-     score: (user.score - props.item.price),
+      score: user.score - props.item.price,
     });
     dispatch(createUserItem(newItem));
-    dispatch(scoreUpdate({score},history));
-    
+    dispatch(scoreUpdate({ score }, history));
+
     handleClose();
     setNewItem({
       ...newItem,
@@ -65,12 +55,14 @@ const Item = (props) => {
         <RiSpaceShipLine onClick={handleShow} />
       </div>
       <Modal show={show} onHide={handleClose}>
-        <Modal.Title>enter a name for your item</Modal.Title>
+        <Modal.Title style={{ color: "black" }}>
+          enter a name for your item
+        </Modal.Title>
 
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="formBasicEmail">
-              <Form.Label>Item name</Form.Label>
+              <Form.Label style={{ color: "black" }}>Item name</Form.Label>
               <Form.Control
                 name="name"
                 type="text"
@@ -93,7 +85,6 @@ const Item = (props) => {
         </Modal.Body>
       </Modal>
     </>
- 
   );
 };
 
