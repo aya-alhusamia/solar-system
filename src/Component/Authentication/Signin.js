@@ -3,11 +3,11 @@ import { useDispatch } from "react-redux";
 import { useHistory, Link } from "react-router-dom";
 
 //Action
-import { signin } from "../../store/action/userActions";
-
+ 
+import { signin } from "../../store/action/authActions";
 //Component
-import Solar from "./Solar/Solar"
-
+import Solar from "./Solar/Solar";
+ 
 //Style
 import { AiFillEye } from "react-icons/ai";
 import { AiFillEyeInvisible } from "react-icons/ai";
@@ -87,4 +87,5 @@ function Signin() {
 }
 
 export default Signin
+ 
  

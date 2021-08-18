@@ -1,3 +1,13 @@
+ 
+// const Item = (props) => {
+//   return (
+//     <div>
+//       <p>{props.item.category}</p>
+//       <img src={props.item.image} />
+//       <p>{props.item.name}</p>
+//       <p>{props.item.price} $</p>
+//     </div>
+ 
 import { useState } from "react";
 import { RiSpaceShipLine } from "react-icons/ri";
 import { Button, Modal, Form } from "react-bootstrap";
@@ -83,6 +93,7 @@ const Item = (props) => {
         </Modal.Body>
       </Modal>
     </>
+ 
   );
 };
 

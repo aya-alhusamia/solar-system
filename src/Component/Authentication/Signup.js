@@ -5,16 +5,15 @@ import { useHistory } from "react-router-dom";
 //Components
 import Solar from "./Solar/Solar";
  
-//Action
-import { signup } from "../../store/action/userActions";
- 
 
- 
+//Action
+import { signup } from "../../store/action/authActions";
 
 //Styling
 import { AiFillEye } from "react-icons/ai";
 import { AiFillEyeInvisible } from "react-icons/ai";
 import { FiUser } from "react-icons/fi";
+ 
 import "./style.css"
 
 function Signup() {
@@ -83,4 +82,5 @@ function Signup() {
 }
 
 export default Signup
+ 
  

@@ -1,5 +1,7 @@
+ 
   body{
     background-color: rgba(0, 0, 0, 0.082);
+ 
  
     height: 100%;
     width: 100%;
@@ -283,7 +285,10 @@
     to{
       transform: rotateY(-360deg) rotateX(73deg);
     }
+ 
   }
+ 
+  
 .sun .star {
   width: 250px;
   height: 250px;
@@ -534,4 +539,5 @@
     transform: rotateY(-360deg) rotateX(73deg);
   }
 }
+ 
  
