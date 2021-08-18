@@ -1,6 +1,5 @@
-  
- .bg-dark{
-  opacity: 0.5;
-  --bs-bg-opacity: 0.5;
-  background-color: #201f2013 !important;
- }
+
+.text1 {
+  text-decoration: "none";
+}
+

@@ -10,12 +10,13 @@ import Profile from "./Profile/Profile";
 import ItemList from "./SpaceStore/ItemList";
 import SolarSystem from "./Solar-System/SolarSystem/SolarSystem";
 import Home from "./Home/Home";
+import UserItemList from "./UserItems/UserItemList";
 import Out_In_Space from "./Out _In_Space/Out_In_Space"
 import OutOfSpace from "./Out _In_Space/OutOfSpace";
+
 function Routes() {
   return (
     <Switch>
-
       <Route path="/signup">
         <SignUp />
       </Route>
@@ -27,6 +28,12 @@ function Routes() {
       </Route>
       <Route path="/crisisstore">
         <ItemList />
+      </Route>
+      <Route path="/myitems">
+        <UserItemList />
+      </Route>
+      <Route path="/profile">
+        <Profile />
       </Route>
       <Route path="/navbar">
         <Navbar />
@@ -43,13 +50,6 @@ function Routes() {
       {/* <Route path="/error">
         <ErrorPage />
       </Route> */}
-
-      <Route path="/profile">
-        <Profile />
-      </Route>
-
-      {/* <Redirect to="/" /> */}
-
     </Switch>
   );
 }

@@ -11,6 +11,12 @@ const itemReducer = (state = initialState, action) => {
         ...state,
         userItems: [...state.userItems, action.payload],
       };
+    case actionTypes.FETCH_USERITEM:
+      return {
+        ...state,
+        userItems: action.payload,
+        loading: false,
+      };
     default:
       return state;
   }
