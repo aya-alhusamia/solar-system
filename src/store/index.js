@@ -1,5 +1,6 @@
 import { createStore, applyMiddleware, compose, combineReducers } from "redux";
 import thunk from "redux-thunk";
+import { checkForToken } from "./action/authActions";
 import { fetchItems } from "./action/itemActions";
 import { fetchSpaceImg } from "./action/spaceImgActions";
 import authReducer from "./reducers/authReducer";
@@ -23,5 +24,6 @@ const store = createStore(
   composeEnhancers(applyMiddleware(thunk))
 );
 store.dispatch(fetchItems());
+store.dispatch(checkForToken());
 store.dispatch(fetchSpaceImg());
 export default store;
