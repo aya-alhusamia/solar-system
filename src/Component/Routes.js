@@ -11,7 +11,6 @@ import ItemList from "./SpaceStore/ItemList";
 import SolarSystem from "./Solar-System/SolarSystem/SolarSystem";
 import Home from "./Home/Home";
 import Out_In_Space from "./Out _In_Space/Out_In_Space"
-import OutOfSpace from "./Out _In_Space/OutOfSpace";
 function Routes() {
   return (
     <Switch>
@@ -47,8 +46,7 @@ function Routes() {
       <Route path="/profile">
         <Profile />
       </Route>
-
-      {/* <Redirect to="/" /> */}
+      <Redirect to="/" />
 
     </Switch>
   );
