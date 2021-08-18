@@ -122,7 +122,7 @@ flex-direction: column;
 
 }
 @import url('https://fonts.googleapis.com/css?family=Alegreya+Sans:900');
-body {
+/* body {
   align-items: center;
   display: flex;
   height: 100vh;
@@ -133,7 +133,7 @@ body {
   background: -webkit-linear-gradient(left, #D3CBB8, #6D6027);
   background: -o-linear-gradient(left, #D3CBB8, #6D6027);
   background: linear-gradient(to right, #D3CBB8, #6D6027);
-}
+} */
 @media (max-width: 767px) {
   body {
     display: block;
