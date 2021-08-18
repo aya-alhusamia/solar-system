@@ -1,10 +1,7 @@
- 
 import React from "react";
 import Button from "@material-ui/core/Button";
 import { HiOutlineLogout } from "react-icons/hi";
 import { GiSpaceSuit } from "react-icons/gi";
- 
- 
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { signout } from "../../store/action/authActions";
@@ -12,7 +9,7 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { Navtitle } from "../../styles";
 import { makeStyles } from "@material-ui/core/styles";
- 
+
 const useStyles = makeStyles(() => ({
   btn: {
     fontSize: 18,
@@ -20,9 +17,9 @@ const useStyles = makeStyles(() => ({
     "&:hover": {
       backgroundColor: "grey",
     },
- 
+
   }
- 
+
 }));
 
 const Navbar = () => {
@@ -49,21 +46,13 @@ const Navbar = () => {
           </NavLink>
 
           <ul className="navbar-nav">
-
             {user && (
- 
-              <NavLink to="/games">
-                <li className="nav-item" >
-                  <Button className={classes.btn} >
-                    Games
-                  </Button>
-                </li>
-              </NavLink>
- 
-              <>
+              <div>
                 <NavLink to="/games">
-                  <li className="nav-item">
-                    <Button className={classes.btn}>Games</Button>
+                  <li className="nav-item" >
+                    <Button className={classes.btn} >
+                      Games
+                    </Button>
                   </li>
                 </NavLink>
                 <NavLink to="/crisisstore">
@@ -71,8 +60,7 @@ const Navbar = () => {
                     <Button className={classes.btn}>Store</Button>
                   </li>
                 </NavLink>
-              </>
- 
+              </div>
             )}
             {user ? (
               <>
@@ -103,16 +91,16 @@ const Navbar = () => {
               <>
                 <NavLink to="/signin">
                   <li className="nav-item">
- 
+
                     <Button className={classes.btn}>Sign in</Button>
- 
+
                   </li>
                 </NavLink>
                 <NavLink to="/signup">
                   <li className="nav-item">
- 
+
                     <Button className={classes.btn}>Sign up</Button>
- 
+
                   </li>
                 </NavLink>
               </>

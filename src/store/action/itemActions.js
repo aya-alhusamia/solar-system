@@ -1,6 +1,7 @@
 //Components
 import instance from "./instance";
 import * as actionTypes from "./types";
+import Item from "../../Component/SpaceStore/Item";
 export const updateItem = (updatedItem) => {
   return async (dispatch) => {
     try {
@@ -16,8 +17,8 @@ export const updateItem = (updatedItem) => {
     }
   };
 };
-import Item from "../../Component/SpaceStore/Item";
- 
+
+
 export const fetchItems = () => {
   return async (dispatch) => {
     try {
