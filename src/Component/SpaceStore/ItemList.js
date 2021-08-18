@@ -4,10 +4,18 @@ import Item from "./Item";
 
 const ItemList = () => {
   const items = useSelector((state) => state.items.items);
-  console.log(items);
+ 
+//   console.log(items);
+//   const user = useSelector((state) => state.user.user);
+//   let itemsList = items.map((item) => <Item item={item} key={item.id} />);
+//   if (!user) return <Redirect to="/" />;
+ 
+
   const user = useSelector((state) => state.user.user);
   let itemsList = items.map((item) => <Item item={item} key={item.id} />);
   if (!user) return <Redirect to="/" />;
+
+ 
   return (
     <>
       <div

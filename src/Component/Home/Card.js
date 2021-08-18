@@ -1,4 +1,5 @@
-// import solar_img from "./images/VTCa.gif"
+ 
+import solar_img from "./images/VTCa.gif"
 import { Link } from "react-router-dom";
 //Components
 import Solar_System from "../Solar-System/SolarSystem/SolarSystem"
@@ -21,13 +22,17 @@ function Card() {
                 transform: props.xys.interpolate(trans)
             }}
         >
+ 
             {/* <StyledImg src={solar_img} /> */}
+ 
+            <StyledImg src={solar_img} />
+ 
             <StyledH1>Solar System</StyledH1>
             <div style={{ marginTop: "7px" }}>
                 {" "}
                 <Link to="/solar"> <CgDetailsMore
                     size="3em"
-
+ 
                     color="#f8f9fa"
                 /> </Link>
 

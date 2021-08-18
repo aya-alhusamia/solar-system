@@ -6,6 +6,7 @@ const initialState = {
 };
 const itemReducer = (state = initialState, action) => {
   switch (action.type) {
+ 
     case actionTypes.UPDATE_ITEM:
       const { updatedItem } = action.payload;
       return {
@@ -14,6 +15,7 @@ const itemReducer = (state = initialState, action) => {
           item.id === updatedItem.id ? updatedItem : item
         ),
       };
+ 
     case actionTypes.FETCH_ITEM:
       return {
         ...state,
