@@ -1,16 +1,15 @@
 import * as actionTypes from "../action/types";
 
 const initialState = {
-  items: [],
+  userItems: [],
   loading: true,
 };
 const itemReducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.FETCH_ITEM:
+    case actionTypes.CREATE_USERITEM:
       return {
         ...state,
-        items: action.payload,
-        loading: false,
+        userItems: [...state.userItems, action.payload],
       };
     default:
       return state;

@@ -43,7 +43,7 @@ function Routes() {
       <Route path="/profile">
         <Profile />
       </Route>
-      <Redirect to="/" />
+      {/* <Redirect to="/" /> */}
     </Switch>
   );
 }
