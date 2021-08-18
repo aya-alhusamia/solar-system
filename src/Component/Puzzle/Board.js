@@ -12,11 +12,12 @@ import { useHistory } from "react-router";
 
 function Board({ randomImg }) {
   const history = useHistory();
-  const score = useSelector((state) => state.user.user?.score);
+ const score = useSelector((state) => state.user.user?.score);
   const [tiles, setTiles] = useState([...Array(TILE_COUNT).keys()]);
   const [isStarted, setIsStarted] = useState(false);
   console.log("is started:", isStarted);
   const [moves, setMoves] = useState(0);
+//  const [hasWon, setHasWon] = useState(false);
   const shuffleTiles = () => {
     const shuffledTiles = shuffle(tiles);
     setTiles(shuffledTiles);
@@ -63,13 +64,18 @@ function Board({ randomImg }) {
     width: BOARD_SIZE,
     height: BOARD_SIZE,
   };
-  const hasWon = isSolved(tiles);
-
-  useEffect(() => {
-    if (hasWon) {
-      dispatch(scoreUpdate({ score: score + calculateScore() }, history));
-    }
-  }, [hasWon]);
+ 
+const hasWon= isSolved(tiles)
+// console.log("hoon", setHasWon(wafaa))
+const handleClick=()=>{
+    dispatch(scoreUpdate({ score: score + calculateScore() }, history));
+}
+//   useEffect(() => {
+    // if (setHasWon()===wafaa)) {
+    // return ("hii")
+    //     // dispatch(scoreUpdate({ score: score + calculateScore() }, history));
+    // }
+//   }, [setHasWon()]);
   return (
     <>
       <ul style={style} className="board">
@@ -85,7 +91,10 @@ function Board({ randomImg }) {
           />
         ))}
       </ul>
-      {hasWon && isStarted && <div>Puzzle solved 🧠 🎉 {calculateScore()}</div>}
+      {hasWon && isStarted && <div>Puzzle solved 🧠 🎉 {calculateScore()}
+      <button onClick={handleClick}>
+        finish  </button></div>}
+      
       {!isStarted ? (
         <button onClick={() => handleStartClick()}>Start game</button>
       ) : (
