@@ -6,6 +6,16 @@ const initialState = {
 };
 const itemReducer = (state = initialState, action) => {
   switch (action.type) {
+ 
+    case actionTypes.UPDATE_ITEM:
+      const { updatedItem } = action.payload;
+      return {
+        ...state,
+        items: state.items.map((item) =>
+          item.id === updatedItem.id ? updatedItem : item
+        ),
+      };
+ 
     case actionTypes.FETCH_ITEM:
       return {
         ...state,

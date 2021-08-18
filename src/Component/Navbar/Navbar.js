@@ -17,7 +17,9 @@ const useStyles = makeStyles(() => ({
     "&:hover": {
       backgroundColor: "grey",
     },
-  },
+
+  }
+
 }));
 
 const Navbar = () => {
@@ -36,31 +38,21 @@ const Navbar = () => {
         style={{ backgroundColor: "#495057" }}
       >
         <div className="container-fluid">
-          <Navtitle className="navbar-brand" style={{ color: "#f8f9fa" }}>
-            <GiSpaceSuit size="2.0em" />
-            Crisis Galaxy
-          </Navtitle>
-          <ul className="navbar-nav">
-            <NavLink to="/">
-              <li className="nav-item active">
-                <Button className={classes.btn}>Home</Button>
-              </li>
-            </NavLink>
-            {/* {user && user.userType === "admin" ? (
-              <NavLink to="/games">
-                <button type="button" className="btn btn-outline-light me-3">
-                  Games
-                </button>
-              </NavLink>
-            ) : (
-              true
-            )} */}
+          <NavLink to="/">
+            <Navtitle className="navbar-brand" style={{ color: "#f8f9fa" }} >
+              <GiSpaceSuit size="2.0em" />
+              Crisis Galaxy
+            </Navtitle>
+          </NavLink>
 
+          <ul className="navbar-nav">
             {user && (
-              <>
+              <div>
                 <NavLink to="/games">
-                  <li className="nav-item">
-                    <Button className={classes.btn}>Games</Button>
+                  <li className="nav-item" >
+                    <Button className={classes.btn} >
+                      Games
+                    </Button>
                   </li>
                 </NavLink>
                 <NavLink to="/crisisstore">
@@ -68,7 +60,7 @@ const Navbar = () => {
                     <Button className={classes.btn}>Store</Button>
                   </li>
                 </NavLink>
-              </>
+              </div>
             )}
             {user ? (
               <>
@@ -99,12 +91,16 @@ const Navbar = () => {
               <>
                 <NavLink to="/signin">
                   <li className="nav-item">
+
                     <Button className={classes.btn}>Sign in</Button>
+
                   </li>
                 </NavLink>
                 <NavLink to="/signup">
                   <li className="nav-item">
+
                     <Button className={classes.btn}>Sign up</Button>
+
                   </li>
                 </NavLink>
               </>
@@ -117,3 +113,7 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+
+

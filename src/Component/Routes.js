@@ -8,10 +8,13 @@ import Navbar from "./Navbar/Navbar";
 import ErrorPage from "./404Page/ErrorPage";
 import Profile from "./Profile/Profile";
 import ItemList from "./SpaceStore/ItemList";
+import SolarSystem from "./Solar-System/SolarSystem/SolarSystem";
+import Home from "./Home/Home";
 
 function Routes() {
   return (
     <Switch>
+
       <Route path="/signup">
         <SignUp />
       </Route>
@@ -27,6 +30,12 @@ function Routes() {
       <Route path="/navbar">
         <Navbar />
       </Route>
+      <Route path="/solar">
+        <SolarSystem />
+      </Route>
+      <Route path="/">
+        <Home />
+      </Route>
       {/* <Route path="/error">
         <ErrorPage />
       </Route> */}
@@ -34,7 +43,9 @@ function Routes() {
       <Route path="/profile">
         <Profile />
       </Route>
+ 
       {/* <Redirect to="/" /> */}
+ 
     </Switch>
   );
 }

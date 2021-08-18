@@ -1,0 +1,124 @@
+html{
+    height: 100%;
+    overflow: auto; 
+}
+.out{
+ z-index: 4;
+}
+
+.stars, .twinkling, .clouds {
+	position:absolute;
+	display:block;
+	top:0; bottom:0;
+	left:0; right:0;
+	width:100%; height:100%;
+}
+
+.stars {
+    height:200vh;
+	z-index: 0;
+	background: #000 url('https://image.ibb.co/mjnygo/stars.png') repeat top center;
+}
+
+.twinkling{
+    height:200vh;
+	z-index: 1;
+	background:transparent url('https://image.ibb.co/ir1DE8/twinkling.png') repeat top center;
+	animation: move-twink-back 200s linear infinite;
+}
+
+.clouds{
+	z-index: 2;
+    background:transparent url('https://image.ibb.co/bT4N7T/clouds.png') repeat top center;
+	animation: move-clouds-back 200s linear infinite;
+}
+
+.intro{
+    color: rgb(203 200 216);
+display: flex;
+margin-top: 50px;
+margin-left: 25%;
+width: 50vw;
+padding: 50px;
+background: #494a4a10;
+border-radius: 10px;
+border: 2px solid transparent;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+}
+
+.cont{
+    padding-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+}
+.cont>h3{
+    color: rgb(203 200 216)
+}
+.item{
+    
+    display: flex;
+    margin-bottom: 40px;
+    padding: 20px;
+    grid-auto-columns: 1fr;
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto minmax(auto, 37px);
+    border-style: solid;
+    border-width: 1px;
+    border-color: #424242;
+    border-radius: 5px;
+    box-shadow: 1px 1px 12px 0 rgb(66 66 66 / 12%);
+}
+
+.item >p{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    font-family: Semplicitapro ;
+    color: #f0f0f080;
+    /* font-size: 17px; */
+    /* line-height: 1.375em; */
+    margin: auto;
+}
+.a1{
+    font-size: 25px;
+    text-shadow:0 1px 1px #f7f7ef, 0 2px 2px rgb(203 200 216);
+}
+.a2{
+    color: rgb(203 200 216);
+    font-size: 20;
+}
+
+.item >img{
+    grid-column-end: 5;
+    grid-column-start: 3;
+    grid-row-end: 5;
+    grid-row-start: 2;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+}
+ 
+
+@keyframes move-twink-back {
+	from {background-position:0 0;}
+	to {background-position:-10000px 5000px;}
+}
+
+@keyframes move-clouds-back {
+	from {background-position:0 0;}
+	to {background-position:10000px 0;}
+}
+
+@keyframes move-item-back {
+    from{opacity: 0;}
+    to{opacity: 1;}
+
+}
