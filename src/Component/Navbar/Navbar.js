@@ -2,6 +2,7 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import { HiOutlineLogout } from "react-icons/hi";
 import { GiSpaceSuit } from "react-icons/gi";
+ 
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { signout } from "../../store/action/authActions";
@@ -9,7 +10,8 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { Navtitle } from "../../styles";
 import { makeStyles } from "@material-ui/core/styles";
-
+ 
+ 
 const useStyles = makeStyles(() => ({
   btn: {
     fontSize: 18,
@@ -17,7 +19,10 @@ const useStyles = makeStyles(() => ({
     "&:hover": {
       backgroundColor: "grey",
     },
-  },
+ 
+  }
+ 
+ 
 }));
 
 const Navbar = () => {
@@ -36,6 +41,21 @@ const Navbar = () => {
         style={{ backgroundColor: "#495057" }}
       >
         <div className="container-fluid">
+ 
+          <NavLink to="/">
+            <Navtitle className="navbar-brand" style={{ color: "#f8f9fa" }} >
+              <GiSpaceSuit size="2.0em" />
+              Crisis Galaxy
+            </Navtitle>
+          </NavLink>
+
+          <ul className="navbar-nav">
+            {/* <NavLink to="/">
+              <li className="nav-item active" >
+                <Button className={classes.btn}>
+                  Home
+                </Button>
+ 
           <Navtitle className="navbar-brand" style={{ color: "#f8f9fa" }}>
             <GiSpaceSuit size="2.0em" />
             Crisis Galaxy
@@ -44,8 +64,9 @@ const Navbar = () => {
             <NavLink to="/">
               <li className="nav-item active">
                 <Button className={classes.btn}>Home</Button>
+ 
               </li>
-            </NavLink>
+            </NavLink> */}
             {/* {user && user.userType === "admin" ? (
               <NavLink to="/games">
                 <button type="button" className="btn btn-outline-light me-3">
@@ -57,6 +78,8 @@ const Navbar = () => {
             )} */}
 
             {user && (
+ 
+ 
               <>
                 <NavLink to="/games">
                   <li className="nav-item">
@@ -69,6 +92,7 @@ const Navbar = () => {
                   </li>
                 </NavLink>
               </>
+ 
             )}
             {user ? (
               <>
@@ -117,3 +141,7 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+
+

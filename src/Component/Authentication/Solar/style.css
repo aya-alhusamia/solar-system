@@ -1,34 +1,68 @@
-body {
-  background-color: rgba(8, 8, 8, 0.11);
-  height: 100%;
-  width: 100%;
-  top: 0;
-  bottom: 0;
-  overflow: hidden;
-}
-.wrapper {
-  position: relative;
-  margin: 0 auto;
-  display: block;
-  margin-top: 200px;
-  perspective: 1000px;
-  perspective-origin: 60% 50%;
-  transform: rotate(-10deg);
-}
-.wrapper > div {
-  position: relative;
-  margin: 0 auto;
-  transform-style: preserve-3d;
-  height: 0;
-}
-.sun {
-  width: 250px;
-  position: absolute;
-  top: 0;
-  z-index: 1;
-  height: 125px !important;
-}
 
+
+ 
+  body{
+    background-color: rgba(0, 0, 0, 0.082);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+  }  
+.wrapper{
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    margin-top: 200px;
+    perspective: 1000px;
+    perspective-origin: 60% 50%;
+    transform: rotate(-10deg);
+  }
+  .wrapper > div{
+    position: relative;
+    margin: 0 auto;
+    transform-style: preserve-3d;
+    height: 0;
+  }
+  .sun{
+    width: 250px;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    height: 125px !important;
+  }
+  
+  .sun .star{
+    width: 250px;
+    height: 250px;
+    background: url(../images/sun.png) no-repeat;
+    background-size: cover;
+    border-radius: 250px;
+    margin: 0 auto;
+    animation: spinsun 40s infinite linear;
+  }
+  .planet{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    animation-iteration-count: infinite;
+    overflow: hidden;
+  }
+  
+  .shadow{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: transparent url(../images/shadow.png) 0% 0% no-repeat;
+    background-size: cover;
+    border-radius: 100%; 
+  }
+  .murcury{
+    position: absolute;
+    width: 400px;
+ 
 .sun .star {
   width: 250px;
   height: 250px;
