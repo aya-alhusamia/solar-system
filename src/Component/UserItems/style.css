@@ -1,11 +1,12 @@
 .item-list{
     display: flex;
     flex-direction: column;
-     height: 100vh;
-     
+    height: 110vh;
+    overflow: auto;
   }
 .it{
     margin-left: 90%;
+    
 }  
 .image{
     padding-right: 10px;
