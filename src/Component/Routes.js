@@ -6,13 +6,12 @@ import Signin from "./Authentication/Signin";
 import Puzzle from "./Puzzle/Puzzle";
 import Navbar from "./Navbar/Navbar";
 import ErrorPage from "./404Page/ErrorPage";
-import Profile from "./Profile/Profile";
+import Profile1 from "./Profile/Profile1";
 import ItemList from "./SpaceStore/ItemList";
 import SolarSystem from "./Solar-System/SolarSystem/SolarSystem";
 import Home from "./Home/Home";
 import UserItemList from "./UserItems/UserItemList";
 import Out_In_Space from "./Out _In_Space/Out_In_Space"
-import Orbit from "./UserItems/Orbits/Orbits"
 function Routes() {
   return (
     <Switch>
@@ -32,7 +31,7 @@ function Routes() {
         <UserItemList />
       </Route>
       <Route path="/profile">
-        <Profile />
+        <Profile1 />
       </Route>
       <Route path="/navbar">
         <Navbar />
@@ -42,9 +41,6 @@ function Routes() {
       </Route>
       <Route path="/space">
         <Out_In_Space />
-      </Route>
-      <Route path="/orbit">
-        <Orbit />
       </Route>
       <Route path="/">
         <Home />
