@@ -13,12 +13,12 @@ import { useHistory } from "react-router";
 
 function Board({ randomImg }) {
   const history = useHistory();
- const score = useSelector((state) => state.user.user?.score);
+  const score = useSelector((state) => state.user.user?.score);
   const [tiles, setTiles] = useState([...Array(TILE_COUNT).keys()]);
   const [isStarted, setIsStarted] = useState(false);
   console.log("is started:", isStarted);
   const [moves, setMoves] = useState(0);
-//  const [hasWon, setHasWon] = useState(false);
+  //  const [hasWon, setHasWon] = useState(false);
   const shuffleTiles = () => {
     const shuffledTiles = shuffle(tiles);
     setTiles(shuffledTiles);
@@ -65,11 +65,11 @@ function Board({ randomImg }) {
     width: BOARD_SIZE,
     height: BOARD_SIZE,
   };
- 
-const hasWon= isSolved(tiles)
-const handleClick=()=>{
+
+  const hasWon = isSolved(tiles)
+  const handleClick = () => {
     dispatch(scoreUpdate({ score: score + calculateScore() }, history));
-}
+  }
 
   return (
     <div className="main">
@@ -87,19 +87,19 @@ const handleClick=()=>{
         ))}
       </ul>
       {hasWon && isStarted && <div>Puzzle solved 🧠 🎉 {calculateScore()}
-      <button onClick={handleClick}>
-        finish  </button></div>}
-      <div className="wrapper">
+        <button className="start-btn" onClick={handleClick}>
+          finish  </button></div>}
+
       {!isStarted ? (
-        <button className="my-button" onClick={() => handleStartClick()}>Start game</button>
+        <button className="start-btn" onClick={() => handleStartClick()}>Start game</button>
       ) : (
-        <button className="my-button" onClick={() => handleShuffleClick()}>Restart game</button>
+        <button className="start-btn" onClick={() => handleShuffleClick()}>Restart game</button>
       )}
-      </div>
+
     </div>
-    
+
   );
- 
+
 }
 
 export default Board;
