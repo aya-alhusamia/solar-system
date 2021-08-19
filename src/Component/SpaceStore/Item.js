@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { createUserItem, fetchUserItems } from "../../store/action/userItemActions";
 import { scoreUpdate } from "../../store/action/authActions";
 import { useHistory } from "react-router";
-
+import "./style.css"
 const Item = (props) => {
   const user = useSelector((state) => state.user.user);
   const history = useHistory();
@@ -36,10 +36,11 @@ const Item = (props) => {
       name: "",
     });
   };
- 
+
   useEffect(() => {
     dispatch(fetchUserItems()
-  )}, [newItem])
+    )
+  }, [newItem])
 
   const handleInputChange = (event) => {
     setNewItem({
@@ -51,12 +52,19 @@ const Item = (props) => {
 
   return (
     <>
-      <div>
-        <p>{props.item.category}</p>
-        <img src={props.item.image} />
-        <p>{props.item.name}</p>
-        <p>{props.item.price} $</p>
-        <RiSpaceShipLine onClick={handleShow} />
+      <div className="card">
+        <div className="card-inner">
+          <div className="card-front">
+            <p>{props.item.category}</p>
+            <img src={props.item.image} />
+          </div>
+          <div className="card-back">
+            <h3>{props.item.name}</h3>
+            <p>{props.item.price} $</p>
+            <RiSpaceShipLine onClick={handleShow} />
+          </div>
+        </div>
+
       </div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Title style={{ color: "black" }}>
