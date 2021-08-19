@@ -89,14 +89,14 @@ const Navbar = () => {
             </>
           ) : (
             <>
-              <NavLink to="/signin">
+              <NavLink to="/signin" style={{ textDecoration: "none" }}>
                 <li className="nav-item">
-                  <Button className={classes.btn}>Sign in</Button>
+                  <Button className={classes.btn} >Sign in</Button>
                 </li>
               </NavLink>
-              <NavLink to="/signup">
+              <NavLink to="/signup" style={{ textDecoration: "none" }}>
                 <li className="nav-item">
-                  <Button className={classes.btn}>Sign up</Button>
+                  <Button className={classes.btn} >Sign up</Button>
                 </li>
               </NavLink>
             </>

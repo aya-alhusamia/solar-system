@@ -12,8 +12,7 @@ import SolarSystem from "./Solar-System/SolarSystem/SolarSystem";
 import Home from "./Home/Home";
 import UserItemList from "./UserItems/UserItemList";
 import Out_In_Space from "./Out _In_Space/Out_In_Space"
-import OutOfSpace from "./Out _In_Space/OutOfSpace";
-
+import Orbit from "./UserItems/Orbits/Orbits"
 function Routes() {
   return (
     <Switch>
@@ -44,12 +43,16 @@ function Routes() {
       <Route path="/space">
         <Out_In_Space />
       </Route>
+      <Route path="/orbit">
+        <Orbit />
+      </Route>
       <Route path="/">
         <Home />
       </Route>
       {/* <Route path="/error">
         <ErrorPage />
       </Route> */}
+      {/* <Redirect to="/error" /> */}
     </Switch>
   );
 }
