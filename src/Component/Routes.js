@@ -13,7 +13,7 @@ import Home from "./Home/Home";
 import UserItemList from "./UserItems/UserItemList";
 import Out_In_Space from "./Out _In_Space/Out_In_Space"
 import OutOfSpace from "./Out _In_Space/OutOfSpace";
-
+import Test from "./Out _In_Space/Test";
 function Routes() {
   return (
     <Switch>
@@ -43,6 +43,9 @@ function Routes() {
       </Route>
       <Route path="/space">
         <Out_In_Space />
+      </Route>
+      <Route path="/test">
+        <Test />
       </Route>
       <Route path="/">
         <Home />
