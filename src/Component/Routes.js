@@ -12,6 +12,10 @@ import SolarSystem from "./Solar-System/SolarSystem/SolarSystem";
 import Home from "./Home/Home";
 import UserItemList from "./UserItems/UserItemList";
 import Out_In_Space from "./Out _In_Space/Out_In_Space"
+import Test from "./UserItems/Test";
+import UserItem from "./UserItems/UserItem";
+import Planet from "./PlanetGame/Planet";
+import Main from "./MemoryGame/Main";
 function Routes() {
   return (
     <Switch>
@@ -24,11 +28,18 @@ function Routes() {
       <Route path="/games">
         <Puzzle />
       </Route>
+      <Route path="/memory">
+        <Main />
+      </Route>
       <Route path="/crisisstore">
         <ItemList />
       </Route>
       <Route path="/myitems">
-        <UserItemList />
+        {/* <UserItemList /> */}
+        <Test />
+      </Route>
+      <Route path="/planet">
+        <Planet />
       </Route>
       <Route path="/profile">
         <Profile1 />
@@ -42,9 +53,11 @@ function Routes() {
       <Route path="/space">
         <Out_In_Space />
       </Route>
+
       <Route path="/">
         <Home />
       </Route>
+
       {/* <Route path="/error">
         <ErrorPage />
       </Route> */}
