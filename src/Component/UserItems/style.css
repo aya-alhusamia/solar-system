@@ -16,3 +16,14 @@
   /* box-shadow: 0 10px 10px #e5730030, 0 10px 10px #e5730030; */
 }
 
+.bord{
+  width: 300px;
+  height: 500px;
+  border: 2px solid white
+}
+.a{
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+}

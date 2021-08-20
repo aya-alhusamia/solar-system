@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 
 //Components
 import Solar from "./Solar/Solar";
- 
+
 
 //Action
 import { signup } from "../../store/action/authActions";
@@ -13,7 +13,7 @@ import { signup } from "../../store/action/authActions";
 import { AiFillEye } from "react-icons/ai";
 import { AiFillEyeInvisible } from "react-icons/ai";
 import { FiUser } from "react-icons/fi";
- 
+
 import "./style.css"
 
 function Signup() {
@@ -40,7 +40,7 @@ function Signup() {
         <div className="test">
             <Solar />
             <div className="log-from">
-                <form className="container" onSubmit={handleSubmit}>
+                <form className="contain" onSubmit={handleSubmit}>
                     <h2> Signup</h2>
                     <div className="lif">
                         <input type='text'
@@ -82,5 +82,5 @@ function Signup() {
 }
 
 export default Signup
- 
- 
+
+

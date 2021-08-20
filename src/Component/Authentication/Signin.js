@@ -3,11 +3,11 @@ import { useDispatch } from "react-redux";
 import { useHistory, Link } from "react-router-dom";
 
 //Action
- 
+
 import { signin } from "../../store/action/authActions";
 //Component
 import Solar from "./Solar/Solar";
- 
+
 //Style
 import { AiFillEye } from "react-icons/ai";
 import { AiFillEyeInvisible } from "react-icons/ai";
@@ -39,7 +39,7 @@ function Signin() {
         <div className="test">
             <Solar />
             <div className="log-from">
-                <form className="container" onSubmit={handleSubmit}>
+                <form className="contain" onSubmit={handleSubmit}>
                     <h2>LOGIN</h2>
                     <div className="lif">
                         <input type='text'
@@ -87,5 +87,5 @@ function Signin() {
 }
 
 export default Signin
- 
- 
+
+
