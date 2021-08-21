@@ -2,10 +2,13 @@ import { useState, useEffect } from "react";
 import { RiSpaceShipLine } from "react-icons/ri";
 import { Button, Modal, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { createUserItem, fetchUserItems } from "../../store/action/userItemActions";
+import {
+  createUserItem,
+  fetchUserItems,
+} from "../../store/action/userItemActions";
 import { scoreUpdate } from "../../store/action/authActions";
 import { useHistory } from "react-router";
-import "./style.css"
+import "./style.css";
 const Item = (props) => {
   const user = useSelector((state) => state.user.user);
   const history = useHistory();
@@ -38,9 +41,8 @@ const Item = (props) => {
   };
 
   useEffect(() => {
-    dispatch(fetchUserItems()
-    )
-  }, [newItem])
+    dispatch(fetchUserItems());
+  }, [newItem]);
 
   const handleInputChange = (event) => {
     setNewItem({
@@ -52,19 +54,18 @@ const Item = (props) => {
 
   return (
     <>
-      <div className="card">
-        <div className="card-inner">
-          <div className="card-front">
+      <div className="caard">
+        <div className="caard-inner">
+          <div className="caard-front">
             <p>{props.item.category}</p>
             <img src={props.item.image} />
           </div>
-          <div className="card-back">
+          <div className="caard-back">
             <h3>{props.item.name}</h3>
             <p>{props.item.price} $</p>
             <RiSpaceShipLine onClick={handleShow} />
           </div>
         </div>
-
       </div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Title style={{ color: "black" }}>
