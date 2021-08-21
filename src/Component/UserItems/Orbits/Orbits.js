@@ -8,7 +8,7 @@ function Orbits() {
 
 
         <div className="orbit">
-            <div id='container'>
+            <div id='orbit-container'>
                 <div id='neptune-orbit'>
                     <div id='neptune-square'>
                         <div id='neptune'></div>
