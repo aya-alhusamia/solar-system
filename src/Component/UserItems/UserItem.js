@@ -36,7 +36,7 @@ const UserItem = (props) => {
     <>
       <div className="it">
         {/* <h3>{props.userItem?.name}</h3> */}
-        <img className="image"
+        <img className="item-image"
           ref={drag}
           src={specificItem?.image}
           style={{ border: isDragging ? "5px solid pink" : "0px" }}
