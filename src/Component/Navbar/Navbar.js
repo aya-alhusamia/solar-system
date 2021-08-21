@@ -52,6 +52,11 @@ const Navbar = () => {
                   <Button className={classes.btn}>Games</Button>
                 </li>
               </NavLink>
+              <NavLink to="/memory" style={{ textDecoration: "none" }}>
+                <li className="nav-item">
+                  <Button className={classes.btn}> Memory Games</Button>
+                </li>
+              </NavLink>
               <NavLink to="/crisisstore" style={{ textDecoration: "none" }}>
                 <li className="nav-item">
                   <Button className={classes.btn}>Store</Button>
@@ -91,12 +96,12 @@ const Navbar = () => {
             <>
               <NavLink to="/signin" style={{ textDecoration: "none" }}>
                 <li className="nav-item">
-                  <Button className={classes.btn} >Sign in</Button>
+                  <Button className={classes.btn}>Sign in</Button>
                 </li>
               </NavLink>
               <NavLink to="/signup" style={{ textDecoration: "none" }}>
                 <li className="nav-item">
-                  <Button className={classes.btn} >Sign up</Button>
+                  <Button className={classes.btn}>Sign up</Button>
                 </li>
               </NavLink>
             </>
