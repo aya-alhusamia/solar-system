@@ -14,9 +14,14 @@ import "./style.css";
 function Profile1() {
   const _user = useSelector((state) => state.user.user);
   const history = useHistory();
-  console.log(_user);
   const dispatch = useDispatch();
 
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        dispatch(updateUser(user, history));
+    };
+   
   const [user, setUser] = useState({
     username: _user?.username,
     password: "",
@@ -26,14 +31,12 @@ function Profile1() {
     setUser({ ...user, [event.target.name]: event.target.value });
   };
 
+
   const showPass = () => {
     pass === "password" ? setpass("text") : setpass("password");
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    dispatch(updateUser(user, history));
-  };
+  
   return (
     <div style={{ padding: "50px" }}>
       <div className="log-from">
