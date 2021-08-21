@@ -114,8 +114,7 @@ const MemoryGame = ({ options, setOptions, highScore, setHighScore }) => {
             Swal.fire(
               (onclick = dispatch(
                 scoreUpdate({ score: `${score + Math.round(_score)}` }, history)
-              )),
-              console.log(score + _score)
+              ))
             );
           }
         });
