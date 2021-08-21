@@ -159,9 +159,9 @@ const MemoryGame = ({ options, setOptions, highScore, setHighScore }) => {
   if (game.length === 0) return <div>loading...</div>;
   else {
     return (
-      <div id="cards">
+      <div id="cardds">
         {game.map((card, index) => (
-          <div className="card" key={index}>
+          <div className="cardd" key={index}>
             <Card
               id={index}
               color={card.backgroundImage}
