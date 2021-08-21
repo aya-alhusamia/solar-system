@@ -39,7 +39,7 @@ function Profile1() {
     return (
         <div style={{ padding: "50px" }}>
             <div className="log-from">
-                <form className="container" onSubmit={handleSubmit}>
+                <form className="containerProfile" onSubmit={handleSubmit}>
                     <h2>Profile</h2>
                     <div className="lif">
                         <input type='text'

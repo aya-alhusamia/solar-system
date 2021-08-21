@@ -8,7 +8,7 @@ import img3 from "../Home/images/13t0.gif"
 function OutOfSpace() {
     return (
         <div>
-            <div class="card" onclick="this.classList.toggle('expanded')">
+            <div class="cardOut" onclick="this.classList.toggle('expanded')">
                 <img src={img1} />
                 <div class="text1">
                     <div class="text-content">
@@ -18,7 +18,7 @@ function OutOfSpace() {
                 </div>
                 <img src={img1} />
             </div>
-            <div class="card" onclick="this.classList.toggle('expanded')">
+            <div class="cardOut" onclick="this.classList.toggle('expanded')">
                 <img src={img2} />
                 <div class="text2">
                     <div class="text-content">

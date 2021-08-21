@@ -52,8 +52,8 @@ const Item = (props) => {
 
   return (
     <>
-      <div className="card">
-        <div className="card-inner">
+      <div className="cardSpaceStore">
+        <div className="cardSpaceStore-inner">
           <div className="card-front">
             <p>{props.item.category}</p>
             <img src={props.item.image} />
