@@ -94,14 +94,14 @@ const MemoryGame = ({ options, setOptions, highScore, setHighScore }) => {
         }
 
         if (_score > highScore) {
-          setHighScore(_score);
-          const json = JSON.stringify(_score);
+          setHighScore(Math.round(_score));
+          const json = JSON.stringify(Math.round(_score));
           localStorage.setItem("memorygamehighscore", json);
         }
 
         const newGame = Swal.fire({
           title: "you win",
-          text: `your score is : ${_score}`,
+          text: `your score is : ${Math.round(_score)}`,
 
           icon: "success",
           showCancelButton: true,
@@ -113,7 +113,7 @@ const MemoryGame = ({ options, setOptions, highScore, setHighScore }) => {
           if (result.isConfirmed) {
             Swal.fire(
               (onclick = dispatch(
-                scoreUpdate({ score: `${score + _score}` }, history)
+                scoreUpdate({ score: `${score + Math.round(_score)}` }, history)
               )),
               console.log(score + _score)
             );
