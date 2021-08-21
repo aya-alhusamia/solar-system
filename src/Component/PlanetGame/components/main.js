@@ -1,14 +1,14 @@
 import {Container,Row,Col,ProgressBar,Image} from 'react-bootstrap';
-import heroLogo from '../images/hero.png';
-import heroLogo2 from '../images/hero2.png';
-import heroLogo3 from '../images/hero3.png';
+import heroLogo from '../images/hero1.png';
+import heroLogo2 from '../images/hero3.png';
+import heroLogo3 from '../images/hero2.png';
 
 import villianLogo from '../images/villian.png';
-import villianLogo2 from '../images/villian2.png';
+import villianLogo2 from '../images/villian2.jpg';
 import villianLogo3 from '../images/villian3.png';
-//import villianLogo4 from '../images/villian4.png';
+import villianLogo4 from '../images/villian4.png';
 
-import attack from '../images/attack.png';
+
 import {StyledCard} from '../styles'
 
 
@@ -28,7 +28,7 @@ return <Container>
     <StyledCard><StyledCard.Img  src={LevelLogo} /><StyledCard.Title><center>{props.hero}</center></StyledCard.Title></StyledCard>
   </Col>
   <Col xs={3}>
-  <Image src={attack} fluid/>
+  
   </Col>
   {cards}
 </Row><br></br>
