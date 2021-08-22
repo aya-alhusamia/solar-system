@@ -52,11 +52,6 @@ const Navbar = () => {
                   <Button className={classes.btn}>Games</Button>
                 </li>
               </NavLink>
-              <NavLink to="/memory" style={{ textDecoration: "none" }}>
-                <li className="nav-item">
-                  <Button className={classes.btn}> Memory Games</Button>
-                </li>
-              </NavLink>
               <NavLink to="/crisisstore" style={{ textDecoration: "none" }}>
                 <li className="nav-item">
                   <Button className={classes.btn}>Store</Button>
