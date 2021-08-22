@@ -2,10 +2,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 
 .caard {
+  margin: 40px;
   cursor: pointer;
   background-color: transparent;
   height: 300px;
@@ -14,39 +16,45 @@
 }
 
 .caard img {
-  width: 200px;
-  height: 200px;
+  margin-left: 25%;
+  width: 250px;
+  height: 250px;
   object-fit: cover;
 }
 
 .caard-inner {
+  display: flex !important;
+  justify-content: center !important;
   position: relative;
   width: 100%;
   height: 100%;
   transition: transform 0.8s;
   transform-style: preserve-3d;
+  
 }
 
 .caard:hover .caard-inner {
-  transform: rotateY(180deg);
+  transform: rotatey(-180deg);
 }
-
-.caard-front,
+ .caard-front,
 .caard-back {
-  position: absolute;
+ 
+  position: relative;
   width: 100%;
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-}
-
+}  
+ 
 .caard-back {
   background-color: #fff7ee;
   color: #414347;
   padding: 20px;
   transform: rotateY(180deg);
+   
 }
-
+/* 
 .caard > h3 :hover {
   text-shadow: 0 0 20px #8f0808;
-}
+} */
+ 

@@ -16,7 +16,11 @@ import Test from "./UserItems/Test";
 import UserItem from "./UserItems/UserItem";
 import Planet from "./PlanetGame/Planet";
 import Main from "./MemoryGame/Main";
+ 
+import OutOfSpace from "./Out _In_Space/OutOfSpace";
+ 
 import Games from "./Games/Games";
+ 
 function Routes() {
   return (
     <Switch>
@@ -56,6 +60,7 @@ function Routes() {
       </Route>
       <Route path="/space">
         <Out_In_Space />
+        {/* <OutOfSpace /> */}
       </Route>
 
       <Route path="/">

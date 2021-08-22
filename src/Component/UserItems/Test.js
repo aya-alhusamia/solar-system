@@ -8,7 +8,7 @@ function Test() {
     return (
         <DndProvider backend={HTML5Backend}>
             <div className="a">
-                <UserItem />
+                <DragDrop />
             </div>
         </DndProvider>
 
