@@ -2,8 +2,13 @@ import { useState, useEffect, useCallback } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import FailModal from "./components/modal";
 import Main from "./components/main";
-
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router";
+import { scoreUpdate } from "../../store/action/authActions";
 function Planet() {
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const score = useSelector((state) => state.user.user?.score);
   const createVillian = (myhero) => {
     let temp = [],
       repeat = 0,
@@ -30,6 +35,7 @@ function Planet() {
       }
     } else handleShow(setTimer(15));
   };
+
   const reset = () => {
     let _score = getRandomInt(3, 10);
     setHero(_score);
@@ -50,9 +56,14 @@ function Planet() {
   const handleShow = (a) => setShow(true);
   const time = useCallback(
     () =>
-      timer >= 30 ? handleShow(setTimer(30)) : setTimer((timer) => timer + 1),
+      timer >= 20 ? handleShow(setTimer(20)) : setTimer((timer) => timer + 1),
     [timer]
   );
+
+  const handleClick = () => {
+    console.log(" handle score", level);
+    dispatch(scoreUpdate({ score: score + level * 3 }, history));
+  };
 
   useEffect(() => {
     const interval = setInterval(() => time(), 1000);
@@ -71,7 +82,7 @@ function Planet() {
         show={show}
         handleClose={handleClose}
         level={level}
-        reset={reset}
+        handleClick={handleClick}
       />
     </>
   );

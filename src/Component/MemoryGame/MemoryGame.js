@@ -108,7 +108,6 @@ const MemoryGame = ({ options, setOptions, highScore, setHighScore }) => {
           confirmButtonColor: "#3085d6",
           cancelButtonColor: "#d33",
           confirmButtonText: "congratulations!!",
-          //   confirmButton: onclick(handleClick)
         }).then((result) => {
           if (result.isConfirmed) {
             Swal.fire(
