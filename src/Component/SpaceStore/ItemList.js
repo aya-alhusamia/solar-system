@@ -12,11 +12,11 @@ const ItemList = () => {
 
 
   return (
-    <>
+    <div className="">
       <div className="list">
         {itemsList}
       </div>
-    </>
+    </div>
   );
 };
 
