@@ -17,11 +17,11 @@ function Profile1() {
   const dispatch = useDispatch();
 
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        dispatch(updateUser(user, history));
-    };
-   
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    dispatch(updateUser(user, history));
+  };
+
   const [user, setUser] = useState({
     username: _user?.username,
     password: "",
@@ -36,10 +36,10 @@ function Profile1() {
     pass === "password" ? setpass("text") : setpass("password");
   };
 
-  
+
   return (
     <div style={{ padding: "50px" }}>
-      <div className="log-from">
+      <div className="prof-from">
         <form className="containerProfile" onSubmit={handleSubmit}>
           <h2>Profile</h2>
           <div className="lif">

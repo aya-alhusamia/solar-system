@@ -10,7 +10,7 @@ const FailModal = (props) => {
   const history = useHistory();
   const score = useSelector((state) => state.user.user?.score);
 
-  const handleClick = () => {
+  const handleClick = (_score) => {
     console.log(" handle score");
     dispatch(scoreUpdate({ score: `${score + _score}` }, history));
   };

@@ -13,15 +13,15 @@ const UserItem = (props) => {
     })
   }))
   //Drop
-  const [board, setBoard] = useState([])
+  // const [board, setBoard] = useState([])
 
-  const [{ isOver }, drop] = useDrop(() => ({
-    accept: "image",
-    drop: { id: specificItem?.id },
-    collect: (monitor) => ({
-      isOver: !!monitor.isOver()
-    })
-  }))
+  // const [{ isOver }, drop] = useDrop(() => ({
+  //   accept: "image",
+  //   drop: { id: specificItem?.id },
+  //   collect: (monitor) => ({
+  //     isOver: !!monitor.isOver()
+  //   })
+  // }))
 
   // const addImageToBoard = (id) => {
   //     console.log(id);
@@ -42,9 +42,9 @@ const UserItem = (props) => {
           style={{ border: isDragging ? "5px solid pink" : "0px" }}
         />
       </div>
-      <div className="bord"  >
+      {/* <div className="bord"  >
         <img ref={drop} />
-      </div>
+      </div> */}
     </>
   );
 };
