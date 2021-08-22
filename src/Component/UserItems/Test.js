@@ -9,6 +9,7 @@ function Test() {
         <DndProvider backend={HTML5Backend}>
             <div className="a">
                 <DragDrop />
+                {/* <DnD /> */}
             </div>
         </DndProvider>
 

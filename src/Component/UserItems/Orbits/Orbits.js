@@ -4,14 +4,12 @@ import "./style.css"
 
 function Orbits() {
     return (
-
-
-
         <div className="orbit">
             <div id='orbit-container'>
                 <div id='neptune-orbit'>
                     <div id='neptune-square'>
-                        <div id='neptune'></div>
+                        <div id='neptune'>
+                        </div>
                     </div>
                 </div>
                 <div id='uranus-orbit'>

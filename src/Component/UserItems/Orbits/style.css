@@ -1,9 +1,9 @@
 .orbit{
     /* background-image: url("http://i.ytimg.com/vi/qbzFSfWwp-w/maxresdefault.jpg"); */
-    padding-top: 20px;
+    padding-top: -100px;
     padding-left: -50px;
-    z-index:-1;
-    height: 900px;
+    /* z-index: 1; */
+    /* height: 900px; */
 }
 #orbit-container {
     margin-top: -75px;
