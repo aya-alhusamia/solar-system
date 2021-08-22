@@ -16,13 +16,13 @@ import Test from "./UserItems/Test";
 import UserItem from "./UserItems/UserItem";
 import Planet from "./PlanetGame/Planet";
 import Main from "./MemoryGame/Main";
-
 import OutOfSpace from "./Out _In_Space/OutOfSpace";
-
 import Games from "./Games/Games";
-
+import { useSelector } from "react-redux";
+ 
 
 function Routes() {
+  const user = useSelector((state) => state.user.user);
   return (
     <Switch>
       <Route path="/signup">
@@ -31,9 +31,15 @@ function Routes() {
       <Route path="/signin">
         <Signin />
       </Route>
-      <Route path="/games">
-        <Games />
-      </Route>
+      {user ? (
+        <Route path="/games">
+          <Games />
+        </Route>
+      ) : (
+        <Route path="/signin">
+          <Signin />
+        </Route>
+      )}
       <Route path="/puzzle">
         <Puzzle />
       </Route>

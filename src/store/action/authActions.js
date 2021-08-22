@@ -15,7 +15,6 @@ export const signup = (userData, history) => async (dispatch) => {
 export const signin = (userData, history) => async (dispatch) => {
   try {
     const res = await instance.post("/signin", userData);
-
     dispatch(setUser(res.data.token));
     history.push("/games");
   } catch (error) {
