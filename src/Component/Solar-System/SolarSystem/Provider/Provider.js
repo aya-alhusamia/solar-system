@@ -1,5 +1,5 @@
-import { ThemeProvider, createGlobalStyle } from 'styled-components';
-import { theme } from './theme';
+import { ThemeProvider, createGlobalStyle } from "styled-components";
+import { theme } from "./theme";
 
 const GlobalStyle = createGlobalStyle`
     *,
@@ -37,12 +37,11 @@ const GlobalStyle = createGlobalStyle`
     html {
         font-size: 16px;
     }
-
     body {
         font-family: ${theme.fonts.primary};
         font-size: 0.875rem;
         counter-reset: tab;
-        overflow: auto;
+        overflow: auto; 
     }
 
     a {
@@ -52,12 +51,12 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Provider = ({ children }) => {
-    return (
-        <ThemeProvider theme={theme}>
-            <GlobalStyle />
-            {children}
-        </ThemeProvider>
-    );
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      {children}
+    </ThemeProvider>
+  );
 };
 
 export default Provider;

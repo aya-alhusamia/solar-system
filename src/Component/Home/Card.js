@@ -10,6 +10,8 @@ import "./style.css";
 import styled from "styled-components";
 import { useSpring, animated, config } from "react-spring";
 
+import { useSelector } from "react-redux";
+
 const calc = (x, y) => [
   -(y - window.innerHeight / 2) / 20,
   (x - window.innerWidth / 2) / 20,
@@ -18,6 +20,7 @@ const calc = (x, y) => [
 const trans = (x, y, s) =>
   `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 function Card() {
+  const user = useSelector((state) => state.user.user);
   const [props, set] = useSpring(() => ({
     xys: [0, 0, 1],
     config: config.default,
@@ -69,10 +72,17 @@ function Card() {
 
         <StyledH1>Games</StyledH1>
         <div style={{ marginTop: "7px" }}>
-          <Link to="/games">
-            {" "}
-            <CgDetailsMore size="3em" color="#f8f9fa" />{" "}
-          </Link>
+          {user ? (
+            <Link to="/games">
+              {" "}
+              <CgDetailsMore size="3em" color="#f8f9fa" />{" "}
+            </Link>
+          ) : (
+            <Link to="/signin">
+              {" "}
+              <CgDetailsMore size="3em" color="#f8f9fa" />{" "}
+            </Link>
+          )}
         </div>
       </Container>
       {/* <Container
