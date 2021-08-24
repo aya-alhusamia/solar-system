@@ -58,7 +58,7 @@ function Card() {
             <CgDetailsMore size="3em" color="#f8f9fa" />{" "}
           </Link>
         </div>
-      </Container>
+      </Containeree>
       <Containeree
         onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
         onMouseLeave={() => set({ xys: [0, 0, 1] })}
