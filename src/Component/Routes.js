@@ -59,8 +59,8 @@ function Routes() {
       <Route path="/planet">
         <Planet />
       </Route>
-      <Route path="/astro">
-        <Astro />
+      <Route path="/orbit">
+        <Orbits />
       </Route>
       <Route path="/profile">
         {/* <Profile1 /> */}
