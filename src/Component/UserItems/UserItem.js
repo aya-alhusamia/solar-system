@@ -19,7 +19,7 @@ const UserItem = (props) => {
   return (
     <>
       <div className="it">
-        <h3>{props.userItem?.name}</h3>
+        <h3 >{props.userItem?.name}</h3>
         <img className="item-image"
           ref={drag}
           src={specificItem?.image}

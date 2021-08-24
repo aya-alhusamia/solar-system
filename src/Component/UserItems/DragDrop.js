@@ -48,7 +48,7 @@ function DragDrop() {
     }
     let [system, setSystem] = useState([])
     const esraa = board.map((picture, index) =>
-        < UserItem key={index} userItem={picture} >
+        < UserItem key={index} userItem={picture}  >
         </UserItem>
     )
     // function useStickyState([], usersolarsystem) {
@@ -77,20 +77,11 @@ function DragDrop() {
     //     }
     // }, [key, value]);
     return (
-        <div className="wee">
+        <div className="wee" >
             <div className="bord" ref={drop} >
                 {esraa}
             </div>
-            {/* <div className="bord" ref={drop} >
-                 
-                {
-                    board.map((picture, index) => {
-                        return < UserItem key={index} userItem={picture} >
-                        </UserItem>
-                    })
-                }
-            </div> */}
-            <div className="pictures">{userItems.map((userItem, index) => (
+            <div className="pictures"  >{userItems.map((userItem, index) => (
                 <UserItem userItem={userItem} key={index} />
             ))}
 
