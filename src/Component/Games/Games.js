@@ -11,7 +11,7 @@ const Games = () => {
         {/* <p>Aenean lacinia bibendum nulla sed consectetur.</p> */}
         <span className="link-text">
           Go To Hero Game
-          <Link to="/planet">
+          <Link to="/planet" style={{ margin: "8px" }}>
             <img src={image1} />
           </Link>
         </span>
@@ -22,7 +22,7 @@ const Games = () => {
         {/* <p>Aenean lacinia bibendum nulla sed consectetur.</p> */}
         <span className="link-text">
           Go To Memory Game
-          <Link to="/memory">
+          <Link to="/memory" style={{ margin: "8px" }}>
             {" "}
             <img src={image1} />
           </Link>
@@ -34,7 +34,7 @@ const Games = () => {
         {/* <p>Etiam porta sem malesuada.</p> */}
         <span className="link-text">
           Go To Puzzle Game
-          <Link to="/puzzle">
+          <Link to="/puzzle" style={{ margin: "8px" }}>
             <img src={image1} />
           </Link>
         </span>

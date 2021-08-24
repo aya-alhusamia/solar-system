@@ -5,7 +5,6 @@ import "./style.css"
 //Components
 import UserItem from "./UserItem";
 import Orbits from "./Orbits/Orbits";
-import Picture from "./Picture"
 function DragDrop() {
     const userItems = useSelector((state) => state.userItems.userItems);
     console.log(userItems);
@@ -15,8 +14,8 @@ function DragDrop() {
     // ));
     // console.log(userItemsList[0].props.userItem.itemId);
 
-    // const [board, setBoard] = useStickyState([])
-    const [board, setBoard] = useState([])
+    const [board, setBoard] = useStickyState([])
+    // const [board, setBoard] = useState([])
     function useStickyState(defaultValue, key) {
         const [value, setValue] = React.useState(() => {
             const stickyValue = window.localStorage.getItem(key);
@@ -48,10 +47,10 @@ function DragDrop() {
 
     }
     let [system, setSystem] = useState([])
-    const esraa = board.map((picture, index) => {
-        return < UserItem key={index} userItem={picture} >
+    const esraa = board.map((picture, index) =>
+        < UserItem key={index} userItem={picture} >
         </UserItem>
-    })
+    )
     // function useStickyState([], usersolarsystem) {
     //     const [board, setBoard] = React.useState(() => {
     //         const stickyValue = window.localStorage.getItem(usersolarsystem);

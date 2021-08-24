@@ -27,7 +27,7 @@ function Card() {
   }));
   return (
     <div>
-      <Container
+      <Containeree
         onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
         onMouseLeave={() => set({ xys: [0, 0, 1] })}
         style={{
@@ -35,7 +35,6 @@ function Card() {
         }}
       >
         <StyledImg src={solar_img} />
-
         <StyledH1>Solar System</StyledH1>
         <div style={{ marginTop: "7px" }}>
           <Link to="/solar">
@@ -43,8 +42,8 @@ function Card() {
             <CgDetailsMore size="3em" color="#f8f9fa" />{" "}
           </Link>
         </div>
-      </Container>
-      <Container
+      </Containeree>
+      <Containeree
         onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
         onMouseLeave={() => set({ xys: [0, 0, 1] })}
         style={{
@@ -52,7 +51,6 @@ function Card() {
         }}
       >
         <StyledImg src={out_of_space} />
-
         <StyledH1>Out Of Space</StyledH1>
         <div style={{ marginTop: "7px" }}>
           <Link to="/space">
@@ -61,15 +59,14 @@ function Card() {
           </Link>
         </div>
       </Container>
-      {/* <Container
-                onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
-                onMouseLeave={() => set({ xys: [0, 0, 1] })}
-                style={{
-                    transform: props.xys.interpolate(trans),
-                }}
-            >
-                <StyledImg src={gameCard} />
-
+      <Containeree
+        onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
+        onMouseLeave={() => set({ xys: [0, 0, 1] })}
+        style={{
+          transform: props.xys.interpolate(trans),
+        }}
+      >
+        <StyledImg src={gameCard} />
         <StyledH1>Games</StyledH1>
         <div style={{ marginTop: "7px" }}>
           {user ? (
@@ -84,32 +81,14 @@ function Card() {
             </Link>
           )}
         </div>
-      </Container> */}
-
-      {/* <Container
-        onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
-        onMouseLeave={() => set({ xys: [0, 0, 1] })}
-        style={{
-          transform: props.xys.interpolate(trans),
-        }}
-      >
-        <StyledImg src={out_of_space} />
-
-        <StyledH1>Out Of Space</StyledH1>
-        <div style={{ marginTop: "7px" }}>
-          <Link to="/space">
-            {" "}
-            <CgDetailsMore size="3em" color="#f8f9fa" />{" "}
-          </Link>
-        </div>
-      </Container> */}
+      </Containeree>
     </div>
   );
 }
 
 export default Card;
 
-const Container = styled(animated.div)`
+const Containeree = styled(animated.div)`
   padding: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
