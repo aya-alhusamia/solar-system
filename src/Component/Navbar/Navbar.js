@@ -34,8 +34,8 @@ const Navbar = () => {
   const classes = useStyles();
   return (
     <div
-      className="navbar navbar-expand-sm bg-dark navbar-light"
-      style={{ backgroundColor: "#495057" }}
+      className="navbar navbar-expand-sm bg-dark navbar-darck"
+      style={{ backgroundColor: "#131213" }}
     >
       <div className="container-fluid">
         <NavLink to="/" style={{ textDecoration: "none" }}>
@@ -55,11 +55,6 @@ const Navbar = () => {
               <NavLink to="/crisisstore" style={{ textDecoration: "none" }}>
                 <li className="nav-item">
                   <Button className={classes.btn}>Store</Button>
-                </li>
-              </NavLink>
-              <NavLink to="/myitems" style={{ textDecoration: "none" }}>
-                <li className="nav-item">
-                  <Button className={classes.btn}>my Items</Button>
                 </li>
               </NavLink>
               <NavLink to="/profile">

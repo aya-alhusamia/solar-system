@@ -1,17 +1,22 @@
-
-.list {
-  margin-left: 25%;
-  height: 150vh;
-  flex-direction: column;
+.aa{
+  /* height: 100vh; */
   display: flex;
-  align-items:flex-start;
+  justify-content: space-around;
+  align-items:center;
+  background-color: rgba(0, 0, 0, 0.979);
+}
+.list {
+  
+  height: 150vh;
+  display: flex;
+  align-items:center;
   overflow: auto;
   
 }
 
 
-.caard {
-  margin: 40px;
+.caarde {
+  margin: 20px;
   cursor: pointer;
   background-color: transparent;
   height: 300px;
@@ -19,29 +24,30 @@
   box-shadow: 0 0 20px #535252;
 }
 
-.caard img {
+.caarde img {
+  margin: 30px;
   margin-left: 25%;
   width: 250px;
   height: 250px;
   object-fit: cover;
 }
 
-.caard-inner {
+.caarde-inner {
   display: flex !important;
   justify-content: center !important;
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.8s;
+  transition: transform 1.4s;
   transform-style: preserve-3d;
   
 }
 
-.caard:hover .caard-inner {
+.caarde:hover .caarde-inner {
   transform: rotatey(-180deg);
 }
- .caard-front,
-.caard-back {
+ .caarde-front,
+.caarde-back {
  
   position: relative;
   width: 100%;
@@ -50,7 +56,7 @@
   backface-visibility: hidden;
 }  
  
-.caard-back {
+.caarde-back {
   background-color: #fff7ee;
   color: #414347;
   padding: 20px;

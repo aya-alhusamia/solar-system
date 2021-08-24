@@ -19,7 +19,10 @@ import Main from "./MemoryGame/Main";
 import OutOfSpace from "./Out _In_Space/OutOfSpace";
 import Games from "./Games/Games";
 import { useSelector } from "react-redux";
- 
+import Profile2 from "./Profile/Profile2";
+import Orbits from "./UserItems/Orbits/Orbits";
+import Astro from "./Profile/Astro";
+
 
 function Routes() {
   const user = useSelector((state) => state.user.user);
@@ -56,8 +59,12 @@ function Routes() {
       <Route path="/planet">
         <Planet />
       </Route>
+      <Route path="/astro">
+        <Astro />
+      </Route>
       <Route path="/profile">
-        <Profile1 />
+        {/* <Profile1 /> */}
+        <Profile2 />
       </Route>
       <Route path="/navbar">
         <Navbar />
@@ -66,8 +73,8 @@ function Routes() {
         <SolarSystem />
       </Route>
       <Route path="/space">
-        <Out_In_Space />
-        {/* <OutOfSpace /> */}
+        {/* <Out_In_Space /> */}
+        <OutOfSpace />
       </Route>
 
       <Route path="/">
