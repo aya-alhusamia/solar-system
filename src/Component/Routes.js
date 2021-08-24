@@ -19,9 +19,11 @@ import Main from "./MemoryGame/Main";
 import OutOfSpace from "./Out _In_Space/OutOfSpace";
 import Games from "./Games/Games";
 import { useSelector } from "react-redux";
+import StripeContainer from "./Stripe/StripeContainer";
 import Profile2 from "./Profile/Profile2";
 import Orbits from "./UserItems/Orbits/Orbits";
 import Astro from "./Profile/Astro";
+
 
 
 function Routes() {
@@ -43,6 +45,10 @@ function Routes() {
           <Signin />
         </Route>
       )}
+      <Route path="/checkout">
+        {/* <PaymentForm /> */}
+        <StripeContainer />
+      </Route>
       <Route path="/puzzle">
         <Puzzle />
       </Route>

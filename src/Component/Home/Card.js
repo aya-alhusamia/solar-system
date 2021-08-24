@@ -20,7 +20,6 @@ const calc = (x, y) => [
 const trans = (x, y, s) =>
   `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 function Card() {
-
   const user = useSelector((state) => state.user.user);
   const [props, set] = useSpring(() => ({
     xys: [0, 0, 1],
@@ -36,8 +35,6 @@ function Card() {
         }}
       >
         <StyledImg src={solar_img} />
-
-
         <StyledH1>Solar System</StyledH1>
         <div style={{ marginTop: "7px" }}>
           <Link to="/solar">
@@ -54,7 +51,6 @@ function Card() {
         }}
       >
         <StyledImg src={out_of_space} />
-
         <StyledH1>Out Of Space</StyledH1>
         <div style={{ marginTop: "7px" }}>
           <Link to="/space">
@@ -62,7 +58,7 @@ function Card() {
             <CgDetailsMore size="3em" color="#f8f9fa" />{" "}
           </Link>
         </div>
-      </Containeree>
+      </Container>
       <Containeree
         onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
         onMouseLeave={() => set({ xys: [0, 0, 1] })}
@@ -71,7 +67,6 @@ function Card() {
         }}
       >
         <StyledImg src={gameCard} />
-
         <StyledH1>Games</StyledH1>
         <div style={{ marginTop: "7px" }}>
           {user ? (
@@ -87,23 +82,6 @@ function Card() {
           )}
         </div>
       </Containeree>
-      {/* <Container
-        onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
-        onMouseLeave={() => set({ xys: [0, 0, 1] })}
-        style={{
-          transform: props.xys.interpolate(trans),
-        }}
-      >
-        <StyledImg src={out_of_space} />
-
-        <StyledH1>Out Of Space</StyledH1>
-        <div style={{ marginTop: "7px" }}>
-          <Link to="/space">
-            {" "}
-            <CgDetailsMore size="3em" color="#f8f9fa" />{" "}
-          </Link>
-        </div>
-      </Container> */}
     </div>
   );
 }
