@@ -6,7 +6,7 @@ import Signin from "./Authentication/Signin";
 import Puzzle from "./Puzzle/Puzzle";
 import Navbar from "./Navbar/Navbar";
 import ErrorPage from "./404Page/ErrorPage";
-import Profile1 from "./Profile/Profile1";
+
 import ItemList from "./SpaceStore/ItemList";
 import SolarSystem from "./Solar-System/SolarSystem/SolarSystem";
 import Home from "./Home/Home";
@@ -23,8 +23,6 @@ import StripeContainer from "./Stripe/StripeContainer";
 import Profile2 from "./Profile/Profile2";
 import Orbits from "./UserItems/Orbits/Orbits";
 import Astro from "./Profile/Astro";
-
-
 
 function Routes() {
   const user = useSelector((state) => state.user.user);

@@ -54,16 +54,15 @@ const Item = (props) => {
 
   return (
     <>
-
       <div className="caarde">
         <div className="caarde-inner">
           <div className="caarde-front">
-            {/* <p>{props.item.category}</p> */}
+            <p>{props.item.price} $</p>
             <img src={props.item.image} />
           </div>
           <div className="caarde-back">
             <h3>{props.item.name}</h3>
-            <p>{props.item.price} $</p>
+            <p>{props.item.category}</p>
             <RiSpaceShipLine onClick={handleShow} />
           </div>
         </div>

@@ -6,9 +6,8 @@ const Games = () => {
   return (
     <section className="page-contain">
       <a href="#" className="data-card">
-        <h3>Easy</h3>
-        <h4>Hero Game</h4>
-        {/* <p>Aenean lacinia bibendum nulla sed consectetur.</p> */}
+        <h3>Hit Alien</h3>
+        <p>Go And Save Our Solar System</p>
         <span className="link-text">
           Go To Hero Game
           <Link to="/planet" style={{ margin: "8px" }}>
@@ -17,9 +16,8 @@ const Games = () => {
         </span>
       </a>
       <a href="#" className="data-card">
-        <h3>Medium</h3>
-        <h4>Memory Game</h4>
-        {/* <p>Aenean lacinia bibendum nulla sed consectetur.</p> */}
+        <h3>Flip Flop</h3>
+        <p>match the cards</p>
         <span className="link-text">
           Go To Memory Game
           <Link to="/memory" style={{ margin: "8px" }}>
@@ -29,9 +27,8 @@ const Games = () => {
         </span>
       </a>
       <a href="#" className="data-card">
-        <h3>Hard</h3>
-        <h4>Puzzle</h4>
-        {/* <p>Etiam porta sem malesuada.</p> */}
+        <h3>Puzzle</h3>
+        <p>puzzle game , crazy game</p>
         <span className="link-text">
           Go To Puzzle Game
           <Link to="/puzzle" style={{ margin: "8px" }}>
