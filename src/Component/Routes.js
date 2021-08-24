@@ -19,7 +19,8 @@ import Main from "./MemoryGame/Main";
 import OutOfSpace from "./Out _In_Space/OutOfSpace";
 import Games from "./Games/Games";
 import { useSelector } from "react-redux";
- 
+
+import StripeContainer from "./Stripe/StripeContainer";
 
 function Routes() {
   const user = useSelector((state) => state.user.user);
@@ -40,6 +41,10 @@ function Routes() {
           <Signin />
         </Route>
       )}
+      <Route path="/checkout">
+        {/* <PaymentForm /> */}
+        <StripeContainer />
+      </Route>
       <Route path="/puzzle">
         <Puzzle />
       </Route>

@@ -13,14 +13,13 @@ import { useSpring, animated, config } from "react-spring";
 import { useSelector } from "react-redux";
 
 const calc = (x, y) => [
-    -(y - window.innerHeight / 2) / 20,
-    (x - window.innerWidth / 2) / 20,
-    1,
+  -(y - window.innerHeight / 2) / 20,
+  (x - window.innerWidth / 2) / 20,
+  1,
 ];
 const trans = (x, y, s) =>
-    `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
+  `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 function Card() {
- 
   const user = useSelector((state) => state.user.user);
   const [props, set] = useSpring(() => ({
     xys: [0, 0, 1],
@@ -36,34 +35,33 @@ function Card() {
         }}
       >
         <StyledImg src={solar_img} />
- 
 
-                <StyledH1>Solar System</StyledH1>
-                <div style={{ marginTop: "7px" }}>
-                    <Link to="/solar">
-                        {" "}
-                        <CgDetailsMore size="3em" color="#f8f9fa" />{" "}
-                    </Link>
-                </div>
-            </Container>
-            <Container
-                onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
-                onMouseLeave={() => set({ xys: [0, 0, 1] })}
-                style={{
-                    transform: props.xys.interpolate(trans),
-                }}
-            >
-                <StyledImg src={out_of_space} />
+        <StyledH1>Solar System</StyledH1>
+        <div style={{ marginTop: "7px" }}>
+          <Link to="/solar">
+            {" "}
+            <CgDetailsMore size="3em" color="#f8f9fa" />{" "}
+          </Link>
+        </div>
+      </Container>
+      <Container
+        onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
+        onMouseLeave={() => set({ xys: [0, 0, 1] })}
+        style={{
+          transform: props.xys.interpolate(trans),
+        }}
+      >
+        <StyledImg src={out_of_space} />
 
-                <StyledH1>Out Of Space</StyledH1>
-                <div style={{ marginTop: "7px" }}>
-                    <Link to="/space">
-                        {" "}
-                        <CgDetailsMore size="3em" color="#f8f9fa" />{" "}
-                    </Link>
-                </div>
-            </Container>
-            <Container
+        <StyledH1>Out Of Space</StyledH1>
+        <div style={{ marginTop: "7px" }}>
+          <Link to="/space">
+            {" "}
+            <CgDetailsMore size="3em" color="#f8f9fa" />{" "}
+          </Link>
+        </div>
+      </Container>
+      {/* <Container
                 onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
                 onMouseLeave={() => set({ xys: [0, 0, 1] })}
                 style={{
@@ -86,7 +84,8 @@ function Card() {
             </Link>
           )}
         </div>
-      </Container>
+      </Container> */}
+
       {/* <Container
         onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
         onMouseLeave={() => set({ xys: [0, 0, 1] })}
@@ -104,8 +103,8 @@ function Card() {
           </Link>
         </div>
       </Container> */}
-        </div>
-    );
+    </div>
+  );
 }
 
 export default Card;
