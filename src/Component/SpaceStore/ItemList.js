@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
+import { AiOutlineArrowRight } from "react-icons/ai";
 import Item from "./Item";
 
 const ItemList = () => {
@@ -12,10 +13,15 @@ const ItemList = () => {
 
 
   return (
-    <div className="">
+    <div className="aa">
       <div className="list">
         {itemsList}
       </div>
+      <AiOutlineArrowRight
+        size="5em"
+        color="#f8f9fa"
+      />
+
     </div>
   );
 };

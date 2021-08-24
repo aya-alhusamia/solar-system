@@ -55,13 +55,13 @@ const Item = (props) => {
   return (
     <>
 
-      <div className="caard">
-        <div className="caard-inner">
-          <div className="caard-front">
-            <p>{props.item.category}</p>
+      <div className="caarde">
+        <div className="caarde-inner">
+          <div className="caarde-front">
+            {/* <p>{props.item.category}</p> */}
             <img src={props.item.image} />
           </div>
-          <div className="caard-back">
+          <div className="caarde-back">
             <h3>{props.item.name}</h3>
             <p>{props.item.price} $</p>
             <RiSpaceShipLine onClick={handleShow} />
