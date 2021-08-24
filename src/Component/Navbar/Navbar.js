@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import { HiOutlineLogout } from "react-icons/hi";
 import { GiSpaceSuit } from "react-icons/gi";
@@ -12,6 +12,7 @@ import { Navtitle } from "../../styles";
 import { makeStyles } from "@material-ui/core/styles";
 
 import "./style.css";
+import { useEffect } from "react";
 
 const useStyles = makeStyles(() => ({
   btn: {
@@ -32,6 +33,11 @@ const Navbar = () => {
     history.push("/");
   };
   const classes = useStyles();
+  const [level, setLevel] = useState(1);
+  // useEffect(() => {
+  //   setLevel(Math.floor(user?.score / 500))?.value();
+  // }, []);
+  console.log("level", level);
   return (
     <div
       className="navbar navbar-expand-sm bg-dark navbar-darck"
@@ -57,6 +63,9 @@ const Navbar = () => {
                   <Button className={classes.btn}>Store</Button>
                 </li>
               </NavLink>
+              <p style={{ fontSize: "20px", marginTop: "5px" }}>
+                level:{Math.round(user?.score / 500)}
+              </p>
               <NavLink to="/profile">
                 <li
                   className="nav-item"
@@ -73,6 +82,7 @@ const Navbar = () => {
                   />
                 </li>
               </NavLink>
+
               <div style={{ marginTop: "7px" }}>
                 {" "}
                 <HiOutlineLogout
