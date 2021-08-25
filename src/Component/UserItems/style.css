@@ -1,4 +1,4 @@
-.wee{
+.wee {
   height: 100vh;
   width: 100vw;
   overflow: auto;
@@ -14,8 +14,7 @@
 } */
 .it {
   margin: 10px;
-    margin-left: 70%;
-    
+  margin-left: 70%;
 }
 .item-image {
   padding-right: 10px;
@@ -25,14 +24,14 @@
   border-radius: 50%;
   /* box-shadow: 0 10px 10px #e5730030, 0 10px 10px #e5730030; */
 }
-.pictures{
+.pictures {
   /* background-color: red; */
   /* width: 40vw; */
   height: 300vh;
   z-index: 0;
 }
 
-.bord{
+.bord {
   z-index: 1;
   margin-left: 40%;
   background-image: url("../Home/images/suuuuuuuuuuuuuuuuuuuuuuuuuuuuun.PNG");
@@ -42,11 +41,11 @@
   height: 300vh;
   border: 2px solid rgba(255, 255, 255, 0)
 }
-.bord > h3{
+.bord > h3 {
   color: black;
   font-size: 1rem;
 }
-.a{
+.a {
   text-align: center;
   width: 100vw;
   height: 100vh;
