@@ -63,7 +63,7 @@ const Navbar = () => {
                   <Button className={classes.btn}>Store</Button>
                 </li>
               </NavLink>
-              <p style={{ fontSize: "20px", marginTop: "5px" }}>
+              <p style={{ fontSize: "20px", marginTop: "5px" }} className="parg">
                 level:{Math.round(user?.score / 500)}
               </p>
               <NavLink to="/profile">
