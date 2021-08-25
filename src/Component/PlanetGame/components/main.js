@@ -3,9 +3,9 @@ import heroLogo from '../images/hero1.png';
 import heroLogo2 from '../images/hero3.png';
 import heroLogo3 from '../images/hero2.png';
 
-import villianLogo from '../images/villian.png';
-import villianLogo2 from '../images/villian2.jpg';
-import villianLogo3 from '../images/villian3.png';
+import villianLogo from '../images/villian.jpg';
+import villianLogo2 from '../images/villian2.jfif';
+import villianLogo3 from '../images/villian3.jpg';
 import villianLogo4 from '../images/villian4.png';
 
 
