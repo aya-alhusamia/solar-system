@@ -13,3 +13,52 @@
   font-family: cursive;
   margin-top: 70px;
 }
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+.searchBar {
+  background: #f2f2f2;
+  font-family: "Open Sans", sans-serif;
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #e45909;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #e45909;
+}
+
+.searchTerm:focus {
+  color: #e45909;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #e45909;
+  background: #e45909;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.searcWrap {
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
