@@ -2,3 +2,10 @@
 .text1 {
   text-decoration: "none";
 }
+.MuiButton-label{
+  margin-left: 3px;
+}
+.parg{
+  margin-left: 8px;
+  margin-right: 5px;
+}

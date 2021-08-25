@@ -19,6 +19,9 @@
   height: 300px;
   perspective: 1000px;
   box-shadow: 0 0 20px #535252;
+} 
+.parr{
+  margin-left: 37%;
 }
 
 .caarde img {

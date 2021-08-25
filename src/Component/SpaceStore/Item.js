@@ -9,6 +9,7 @@ import {
 import { scoreUpdate } from "../../store/action/authActions";
 import { useHistory } from "react-router";
 import "./style.css";
+import { GiCrownCoin } from "react-icons/gi";
 const Item = (props) => {
   const user = useSelector((state) => state.user.user);
   const history = useHistory();
@@ -57,7 +58,7 @@ const Item = (props) => {
       <div className="caarde">
         <div className="caarde-inner">
           <div className="caarde-front">
-            <p>{props.item.price} $</p>
+            <p className="parr">{props.item.price} <GiCrownCoin /> </p>
             <img src={props.item.image} />
           </div>
           <div className="caarde-back">

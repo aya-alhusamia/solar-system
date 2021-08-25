@@ -22,6 +22,7 @@ import StripeContainer from "./Stripe/StripeContainer";
 import Profile2 from "./Profile/Profile2";
 import Orbits from "./UserItems/Orbits/Orbits";
 import Astro from "./Profile/Astro";
+import Index from "./Stripe/Credit";
 
 import VideoList from "./Video/VideoList";
 
@@ -46,7 +47,8 @@ function Routes() {
       )}
       <Route path="/checkout">
         {/* <PaymentForm /> */}
-        <StripeContainer />
+        <Index />
+        {/* <StripeContainer /> */}
       </Route>
       <Route path="/puzzle">
         <Puzzle />
@@ -67,9 +69,6 @@ function Routes() {
       <Route path="/planet">
         <Planet />
       </Route>
-      <Route path="/orbit">
-        <Orbits />
-      </Route>
       <Route path="/profile">
         {/* <Profile1 /> */}
         <Profile2 />
@@ -81,7 +80,6 @@ function Routes() {
         <SolarSystem />
       </Route>
       <Route path="/space">
-        {/* <Out_In_Space /> */}
         <OutOfSpace />
       </Route>
 

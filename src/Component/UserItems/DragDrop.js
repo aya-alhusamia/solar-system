@@ -9,7 +9,7 @@ function DragDrop() {
 
 
     const [board, setBoard] = useState([])
-    // const [board, setBoard] = useStickyState([])
+    //const [board, setBoard] = useStickyState([])
     function useStickyState(defaultValue, key) {
         const [value, setValue] = React.useState(() => {
             const stickyValue = window.localStorage.getItem(key);
