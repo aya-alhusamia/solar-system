@@ -76,7 +76,7 @@ export const scoreUpdate = (score, history) => {
     try {
       const res = await instance.put("/score", score);
       dispatch(checkForToken());
-      //history.push("/crisisstore");
+      // history.push("/crisisstore");
     } catch (error) {
       console.log(error);
     }

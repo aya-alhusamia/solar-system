@@ -62,7 +62,8 @@ function Planet() {
 
   const handleClick = () => {
     console.log(" handle score", level);
-    dispatch(scoreUpdate({ score: score + level * 3 }, history));
+    dispatch(scoreUpdate({ score: score + level * 3 }), history);
+    handleClose()
   };
 
   useEffect(() => {
