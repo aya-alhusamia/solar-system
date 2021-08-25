@@ -34,15 +34,13 @@
 
 .bord{
   z-index: 1;
-  /* margin-left: 40%; */
+  margin-left: 40%;
   background-image: url("../Home/images/suuuuuuuuuuuuuuuuuuuuuuuuuuuuun.PNG");
   background-repeat: no-repeat;
   background-size: 900px 600px;
-  margin-left: 25%;
-  /* background-color: rgba(255, 255, 0, 0); */
-  /* width: 60vw; */
+  background-color: rgba(255, 255, 0, 0);
   height: 300vh;
-  border: 2px solid white
+  border: 2px solid rgba(255, 255, 255, 0)
 }
 .bord > h3{
   color: black;
