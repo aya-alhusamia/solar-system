@@ -1,0 +1,15 @@
+.videoList {
+  height: 90vh;
+  overflow: auto;
+}
+.Documentary {
+  display: flex;
+  flex-direction: row;
+  /* z-index: 2; */
+  padding: 40px;
+}
+.Documentary h1 {
+  margin-left: 40px;
+  font-family: cursive;
+  margin-top: 70px;
+}

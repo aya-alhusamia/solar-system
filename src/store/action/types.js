@@ -12,3 +12,8 @@ export const FETCH_SPACEIMG = "FETCH_SPACEIMG";
 //UserItem Action
 export const CREATE_USERITEM = "CREATE_USERITEM";
 export const FETCH_USERITEM = "FETCH_USERITEM";
+
+//Video Action
+export const FETCH_VIDEO = "FETCH_VIDEO";
+
+export const PAYMENT_INTENT = "PAYMENT_INTENT";

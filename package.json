@@ -29,6 +29,7 @@
     "react-icomoon": "^2.4.1",
     "react-icons": "^4.2.0",
     "react-motion": "^0.5.2",
+    "react-player": "^2.9.0",
     "react-redux": "^7.2.4",
     "react-route": "^1.0.3",
     "react-router": "^5.2.0",

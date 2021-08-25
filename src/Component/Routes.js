@@ -11,7 +11,6 @@ import ItemList from "./SpaceStore/ItemList";
 import SolarSystem from "./Solar-System/SolarSystem/SolarSystem";
 import Home from "./Home/Home";
 import UserItemList from "./UserItems/UserItemList";
-import Out_In_Space from "./Out _In_Space/Out_In_Space";
 import Test from "./UserItems/Test";
 import UserItem from "./UserItems/UserItem";
 import Planet from "./PlanetGame/Planet";
@@ -24,6 +23,8 @@ import Profile2 from "./Profile/Profile2";
 import Orbits from "./UserItems/Orbits/Orbits";
 import Astro from "./Profile/Astro";
 import Index from "./Stripe/Credit";
+
+import VideoList from "./Video/VideoList";
 
 function Routes() {
   const user = useSelector((state) => state.user.user);
@@ -54,6 +55,9 @@ function Routes() {
       </Route>
       <Route path="/memory">
         <Main />
+      </Route>
+      <Route path="/documentaryfilms">
+        <VideoList />
       </Route>
       <Route path="/crisisstore">
         <ItemList />

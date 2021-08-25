@@ -66,6 +66,25 @@ function Card() {
           transform: props.xys.interpolate(trans),
         }}
       >
+        <StyledImg
+          src="https://i.gifer.com/DDpq.gif"
+          style={{ border: "7px solid black" }}
+        />
+        <StyledH1 style={{ fontSize: "35px" }}>Documentary Films</StyledH1>
+        <div style={{ marginTop: "7px" }}>
+          <Link to="/documentaryfilms">
+            {" "}
+            <CgDetailsMore size="3em" color="#f8f9fa" />{" "}
+          </Link>
+        </div>
+      </Containeree>
+      <Containeree
+        onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
+        onMouseLeave={() => set({ xys: [0, 0, 1] })}
+        style={{
+          transform: props.xys.interpolate(trans),
+        }}
+      >
         <StyledImg src={gameCard} />
         <StyledH1>Games</StyledH1>
         <div style={{ marginTop: "7px" }}>
