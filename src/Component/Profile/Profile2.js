@@ -8,6 +8,10 @@ import { Button, Modal, Form } from "react-bootstrap";
 import { AiFillEye } from "react-icons/ai";
 import { AiFillEyeInvisible } from "react-icons/ai";
 import { FiUser } from "react-icons/fi";
+import { HiOutlineLogout } from "react-icons/hi";
+import { ImProfile } from "react-icons/im";
+import { AssignmentIndIcon } from "@material-ui/icons";
+import { signout } from "../../store/action/authActions";
 import "./prof.scss";
 
 function Profile2() {
@@ -15,6 +19,10 @@ function Profile2() {
   const history = useHistory();
   const dispatch = useDispatch();
 
+  const usersignout = () => {
+    dispatch(signout());
+    history.push("/");
+  };
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(updateUser(user, history));
@@ -38,6 +46,19 @@ function Profile2() {
   return (
     <div className="wafaa">
       <aside class="profile-card">
+        <div
+          style={{
+            color: "#4e5b6b",
+            marginLeft: "215px",
+            display: "flex",
+            flexDirection: "row",
+            width: "80px",
+            marginTop: "10px",
+          }}
+        >
+          <ImProfile style={{ marginRight: "10px" }} onClick={handleShow} />{" "}
+          <HiOutlineLogout style={{}} onClick={usersignout} />
+        </div>
         <header className="sal">
           <a className="fai" target="_blank">
             <img className="ht" src="https://i.gifer.com/8D9O.gif" />
@@ -54,16 +75,16 @@ function Profile2() {
           </h3>
           <h1>{_user?.username}</h1>
 
-          <h2 style={{ color: "white" }}>Score: {_user?.score}</h2>
+          <h2 style={{ color: "white" }}>
+            Level: {Math.round(_user?.score / 500)}
+          </h2>
         </header>
-
         <div class="profile-bio">
           <p>
             Hello {_user?.username} , if you want to edit profile please click
             on the below button
           </p>
         </div>
-
         <Modal show={show} onHide={handleClose}>
           <Modal.Title style={{ color: "black" }}>
             Edit your profile
@@ -104,9 +125,6 @@ function Profile2() {
           </Modal.Body>
         </Modal>
       </aside>
-      <button className="btn-waf" onClick={handleShow}>
-        Update Profile{" "}
-      </button>
     </div>
   );
 }

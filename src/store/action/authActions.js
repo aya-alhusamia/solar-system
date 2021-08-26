@@ -82,3 +82,15 @@ export const scoreUpdate = (score, history) => {
     }
   };
 };
+
+export const coinUpdate = (crisiCoin, history) => {
+  console.log("from actions", crisiCoin);
+  return async (dispatch) => {
+    try {
+      const res = await instance.put("/coins", crisiCoin);
+      dispatch(checkForToken());
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
