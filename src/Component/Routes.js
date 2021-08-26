@@ -47,8 +47,8 @@ function Routes() {
       )}
       <Route path="/checkout">
         {/* <PaymentForm /> */}
-        <Index />
-        {/* <StripeContainer /> */}
+        {/* <Index /> */}
+        <StripeContainer />
       </Route>
       <Route path="/puzzle">
         <Puzzle />

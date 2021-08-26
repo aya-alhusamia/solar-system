@@ -13,7 +13,7 @@ const VideoList = () => {
     .map((video) => <Video video={video} key={video.id} />);
   return (
     <>
-      <SearchBar setQuery={setQuery} />
+      {/* <SearchBar setQuery={setQuery} /> */}
       <div className="videoList">{videoList}</div>
     </>
   );
