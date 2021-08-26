@@ -65,13 +65,13 @@ const CheckoutForm = ({ auction }) => {
 
   return (
     <form id="payment-form" onSubmit={handleSubmit}>
-      <input
+      {/* <input
         className="input0"
         type="text"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Enter email address"
-      />
+      /> */}
 
       <CardElement
         id="card-element"
@@ -82,6 +82,9 @@ const CheckoutForm = ({ auction }) => {
         className="buttonO"
         disabled={processing || disabled || succeeded}
         id="submit"
+        onClick={
+          () => alert("Payment succeeded, see the result in your ")
+        }
       >
         <span id="button-text">
           {processing ? (
@@ -98,14 +101,14 @@ const CheckoutForm = ({ auction }) => {
         </div>
       )}
       {/* Show a success message upon completion */}
-      <p className={succeeded ? "result-message" : "result-message hidden"}>
+      {/* <p className={succeeded ? "result-message" : "result-message hidden"}>
         Payment succeeded, see the result in your
         <a href={`https://dashboard.stripe.com/test/payments`}>
           {" "}
           Stripe dashboard.
         </a>{" "}
         Refresh the page to pay again.
-      </p>
+      </p> */}
     </form>
   );
 };

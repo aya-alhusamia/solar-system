@@ -57,6 +57,8 @@ const Card = ({
                 style={{
                     opacity: opacity.interpolate(o => 1 - o),
                     transform,
+                    backgroundSize: "200px 170px",
+                    backgroundRepeat: "no-repeat"
                 }}
             />
             <a.div
@@ -65,6 +67,8 @@ const Card = ({
                     opacity,
                     transform: transform.interpolate(t => `${t} rotateX(180deg)`),
                     background: color,
+                    backgroundSize: "200px 170px",
+                    backgroundRepeat: "no-repeat"
                 }}
             />
         </div>

@@ -65,6 +65,10 @@ const Item = (props) => {
             <h3>{props.item.name}</h3>
             <p>{props.item.category}</p>
             <RiSpaceShipLine onClick={handleShow} />
+            <a href="/checkout" style={{ textDecoration: "none", color: "gray" }}>
+              <GiCrownCoin />
+            </a>
+
           </div>
         </div>
       </div>
