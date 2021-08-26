@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
-import { HiOutlineLogout } from "react-icons/hi";
+
+import { RiCoinsLine } from "react-icons/ri";
 import { GiSpaceSuit } from "react-icons/gi";
 import { CgProfile } from "react-icons/cg";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { signout } from "../../store/action/authActions";
-import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+
 import { Navtitle } from "../../styles";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -26,12 +25,7 @@ const useStyles = makeStyles(() => ({
 
 const Navbar = () => {
   const user = useSelector((state) => state.user.user);
-  const history = useHistory();
-  const dispatch = useDispatch();
-  const usersignout = () => {
-    dispatch(signout());
-    history.push("/");
-  };
+
   const classes = useStyles();
   const [level, setLevel] = useState(1);
   // useEffect(() => {
@@ -63,34 +57,42 @@ const Navbar = () => {
                   <Button className={classes.btn}>Store</Button>
                 </li>
               </NavLink>
-              <p style={{ fontSize: "20px", marginTop: "5px" }} className="parg">
-                level:{Math.round(user?.score / 500)}
+              <p
+                style={{
+                  fontSize: "20px",
+                  marginTop: "5px",
+                  paddingRight: "10px",
+                }}
+                className="parg"
+              >
+                POINTS : {user?.score}
+                <RiCoinsLine
+                  size="2rem"
+                  color="#f8f9fa"
+                  style={{ paddingLeft: "7px" }}
+                />
               </p>
               <NavLink to="/profile">
                 <li
                   className="nav-item"
-                  style={{ paddingTop: "10px", textDecoration: "none" }}
+                  style={{
+                    paddingTop: "10px",
+                    textDecoration: "none",
+                    paddingLeft: "5px",
+                  }}
                 >
                   <CgProfile
-                    size="2em"
+                    size="2.5rem"
                     color="white"
                     style={{
-                      paddingRight: "8",
+                      // paddingRight: "4px",
                       paddingBottom: "10",
-                      paddingLeft: "5",
+                      marginLeft: "-10px",
+                      // paddingLeft: "-3px",
                     }}
                   />
                 </li>
               </NavLink>
-
-              <div style={{ marginTop: "7px" }}>
-                {" "}
-                <HiOutlineLogout
-                  onClick={usersignout}
-                  size="1.5em"
-                  color="#f8f9fa"
-                />
-              </div>
             </>
           ) : (
             <>

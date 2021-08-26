@@ -3,6 +3,7 @@ import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import "./style.css";
 import { useDispatch, useSelector } from "react-redux";
 import { paymentIntent } from "../../store/action/stripeActions";
+import { scoreUpdate } from "../../store/action/authActions";
 
 const CheckoutForm = ({ auction }) => {
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ const CheckoutForm = ({ auction }) => {
   }, []);
 
   const { clientSecret } = useSelector((state) => state.clientSecret);
-
+  const user = useSelector((state) => state.user.user);
   const cardStyle = {
     style: {
       base: {
@@ -63,6 +64,11 @@ const CheckoutForm = ({ auction }) => {
     }
   };
 
+  const handleClick = () => {
+    alert("Payment succeeded");
+    dispatch(scoreUpdate({ score: 5000 + user?.score }));
+  };
+
   return (
     <form id="payment-form" onSubmit={handleSubmit}>
       {/* <input
@@ -82,9 +88,7 @@ const CheckoutForm = ({ auction }) => {
         className="buttonO"
         disabled={processing || disabled || succeeded}
         id="submit"
-        onClick={
-          () => alert("Payment succeeded, see the result in your ")
-        }
+        onClick={handleClick}
       >
         <span id="button-text">
           {processing ? (
@@ -94,21 +98,11 @@ const CheckoutForm = ({ auction }) => {
           )}
         </span>
       </button>
-      {/* Show any error that happens when processing the payment */}
       {error && (
         <div className="card-error" role="alert">
           {error}
         </div>
       )}
-      {/* Show a success message upon completion */}
-      {/* <p className={succeeded ? "result-message" : "result-message hidden"}>
-        Payment succeeded, see the result in your
-        <a href={`https://dashboard.stripe.com/test/payments`}>
-          {" "}
-          Stripe dashboard.
-        </a>{" "}
-        Refresh the page to pay again.
-      </p> */}
     </form>
   );
 };
