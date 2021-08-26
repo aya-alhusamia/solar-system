@@ -4,7 +4,7 @@ import "./style.css";
 import { useDispatch, useSelector } from "react-redux";
 import { paymentIntent } from "../../store/action/stripeActions";
 
-const CheckoutForm = ({ auction }) => {
+const CheckoutForm = () => {
   const dispatch = useDispatch();
   const [succeeded, setSucceeded] = useState(false);
   const [error, setError] = useState(null);
@@ -97,15 +97,14 @@ const CheckoutForm = ({ auction }) => {
           {error}
         </div>
       )}
-      {/* Show a success message upon completion */}
-      <p className={succeeded ? "result-message" : "result-message hidden"}>
+
+      {/* <p className={succeeded ? "result-message" : "result-message hidden"}>
         Payment succeeded, see the result in your
         <a href={`https://dashboard.stripe.com/test/payments`}>
-          {" "}
           Stripe dashboard.
         </a>{" "}
         Refresh the page to pay again.
-      </p>
+      </p> */}
     </form>
   );
 };
