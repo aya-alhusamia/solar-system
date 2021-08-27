@@ -9,7 +9,8 @@ import {
 import { scoreUpdate } from "../../store/action/authActions";
 import { useHistory } from "react-router";
 import "./style.css";
-import { GiCrownCoin } from "react-icons/gi";
+import { RiCoinsLine } from "react-icons/ri";
+
 import { Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -60,6 +61,7 @@ const Item = (props) => {
 
   useEffect(() => {
     dispatch(fetchUserItems());
+    setScore(user.score);
   }, [newItem]);
 
   const handleInputChange = (event) => {
@@ -76,7 +78,7 @@ const Item = (props) => {
         <div className="caarde-inner">
           <div className="caarde-front">
             <p className="parr">
-              {props.item.price} <GiCrownCoin />{" "}
+              {props.item.price} <RiCoinsLine />{" "}
             </p>
             <img src={props.item.image} />
           </div>
@@ -96,7 +98,7 @@ const Item = (props) => {
                 <Button
                   variant="text"
                   className={classes.btn}
-                  startIcon={<GiCrownCoin />}
+                  startIcon={<RiCoinsLine />}
                   onClick={handleShow}
                 >
                   Buy
@@ -116,7 +118,7 @@ const Item = (props) => {
                 <Button
                   variant="text"
                   className={classes.btn}
-                  startIcon={<GiCrownCoin />}
+                  startIcon={<RiCoinsLine />}
                   onClick={handleShow}
                 >
                   Buy
