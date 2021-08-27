@@ -56,8 +56,14 @@ function Profile2() {
             marginTop: "10px",
           }}
         >
-          <ImProfile style={{ marginRight: "10px", color: "rgb(223, 123, 41)" }} onClick={handleShow} />{" "}
-          <HiOutlineLogout style={{ color: "rgb(223, 123, 41)" }} onClick={usersignout} />
+          <ImProfile
+            style={{ marginRight: "10px", color: "rgb(223, 123, 41)" }}
+            onClick={handleShow}
+          />{" "}
+          <HiOutlineLogout
+            style={{ color: "rgb(223, 123, 41)" }}
+            onClick={usersignout}
+          />
         </div>
         <header className="sal">
           <a className="fai" target="_blank">
@@ -82,7 +88,7 @@ function Profile2() {
         <div class="profile-bio">
           <p>
             Hello {_user?.username} , if you want to edit profile please click
-            on the below button
+            at the profile icon above
           </p>
         </div>
         <Modal show={show} onHide={handleClose}>

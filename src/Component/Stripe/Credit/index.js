@@ -6,6 +6,7 @@ import Credit from "./Credit";
 import Swal from "sweetalert2";
 import { scoreUpdate } from "../../../store/action/authActions";
 import { useDispatch, useSelector } from "react-redux";
+import { RiCoinsLine } from "react-icons/ri";
 import {
   formatCreditCardNumber,
   formatCVC,
@@ -49,6 +50,7 @@ const Index = () => {
         }) => {
           return (
             <form onSubmit={handleSubmit}>
+              <h4> Pay 10$ to get 5000 points{<RiCoinsLine />}</h4>
               <Credit
                 number={values.number || ""}
                 name={values.name || ""}
