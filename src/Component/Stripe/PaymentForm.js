@@ -70,8 +70,11 @@ const CheckoutForm = ({ auction }) => {
   };
 
   return (
-    <form id="payment-form" onSubmit={handleSubmit}>
-      {/* <input
+    <div className="ji">
+
+
+      <form id="payment-form" onSubmit={handleSubmit}>
+        {/* <input
         className="input0"
         type="text"
         value={email}
@@ -79,31 +82,32 @@ const CheckoutForm = ({ auction }) => {
         placeholder="Enter email address"
       /> */}
 
-      <CardElement
-        id="card-element"
-        options={cardStyle}
-        onChange={handleChange}
-      />
-      <button
-        className="buttonO"
-        disabled={processing || disabled || succeeded}
-        id="submit"
-        onClick={handleClick}
-      >
-        <span id="button-text">
-          {processing ? (
-            <div className="spinner" id="spinner"></div>
-          ) : (
-            "Pay now"
-          )}
-        </span>
-      </button>
-      {error && (
-        <div className="card-error" role="alert">
-          {error}
-        </div>
-      )}
-    </form>
+        <CardElement
+          id="card-element"
+          options={cardStyle}
+          onChange={handleChange}
+        />
+        <button
+          className="buttonO"
+          disabled={processing || disabled || succeeded}
+          id="submit"
+          onClick={handleClick}
+        >
+          <span id="button-text">
+            {processing ? (
+              <div className="spinner" id="spinner"></div>
+            ) : (
+              "Pay now"
+            )}
+          </span>
+        </button>
+        {error && (
+          <div className="card-error" role="alert">
+            {error}
+          </div>
+        )}
+      </form>
+    </div>
   );
 };
 export default CheckoutForm;

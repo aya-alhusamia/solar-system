@@ -1,10 +1,16 @@
+.ji{
+ background-color: wheat;
+ width: 50vw;
+ height: 50vh;
+ box-shadow: 10px 10px rgb(240, 188, 128) , 10px 10px red;
+ border: 4px solid rgba(228, 132, 42, 0.404);
+}
+
 .FormGroup {
+  border: 5px solid wheat;
   margin: 0 15px 20px;
   padding: 0;
-  border-style: none;
-  background-color: aqua;
   will-change: opacity, tranform;
-  box-shadow: lightcoral;
   border-radius: 4px;
 }
 

@@ -5,7 +5,7 @@ import "./style.scss";
 const Games = () => {
   return (
     <section className="page-contain">
-      <a href="#" className="data-card">
+      <a href="#" className="data-card" style={{ textDecoration: "none" }}>
         <h3>Hit Alien</h3>
         <p>Go And Save Our Solar System</p>
         <span className="link-text">
@@ -15,7 +15,7 @@ const Games = () => {
           </Link>
         </span>
       </a>
-      <a href="#" className="data-card">
+      <a href="#" className="data-card" style={{ textDecoration: "none" }}>
         <h3>Flip Flop</h3>
         <p>match the cards</p>
         <span className="link-text">
@@ -26,7 +26,7 @@ const Games = () => {
           </Link>
         </span>
       </a>
-      <a href="#" className="data-card">
+      <a href="#" className="data-card" style={{ textDecoration: "none" }}>
         <h3>Puzzle</h3>
         <p>puzzle game , crazy game</p>
         <span className="link-text">
