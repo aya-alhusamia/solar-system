@@ -56,8 +56,8 @@ function Profile2() {
             marginTop: "10px",
           }}
         >
-          <ImProfile style={{ marginRight: "10px" }} onClick={handleShow} />{" "}
-          <HiOutlineLogout style={{}} onClick={usersignout} />
+          <ImProfile style={{ marginRight: "10px", color: "rgb(223, 123, 41)" }} onClick={handleShow} />{" "}
+          <HiOutlineLogout style={{ color: "rgb(223, 123, 41)" }} onClick={usersignout} />
         </div>
         <header className="sal">
           <a className="fai" target="_blank">
@@ -114,12 +114,12 @@ function Profile2() {
               </Form.Group>
               <Modal.Footer>
                 {/* <input type="submit" value="Edit your Profile" style={{ color: "black" }} /> */}
-                <Button variant="secondary" type="submit">
+                <button variant="secondary" type="submit">
                   Edit your Profile
-                </Button>
-                <Button variant="secondary" onClick={handleClose}>
+                </button>
+                <button variant="secondary" onClick={handleClose}>
                   Close
-                </Button>
+                </button>
               </Modal.Footer>
             </Form>
           </Modal.Body>
